@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="Test" />
+    <meta name="hexo-theme-A4" content="v1.8.4" />
+    <link rel="alternate icon" type="image/webp" href="/img/sf_1.jpg">
+    <title>ShuFuJia</title>
+
+    
+        
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+    
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+    
+    
+    <body>
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/sf_1.jpg" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">ShuFuJia</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            Test
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Test"><span class="post-toc-text">Test</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Test-1"><span class="post-toc-text">Test</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Test-2"><span class="post-toc-text">Test</span></a></li></ol></li></ol></li></ol>
+            
+        
+        <h1 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1><h2 id="Test-1"><a href="#Test-1" class="headerlink" title="Test"></a>Test</h2><h3 id="Test-2"><a href="#Test-2" class="headerlink" title="Test"></a>Test</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># Definition <span class="keyword">for</span> a binary tree node.</span><br><span class="line"><span class="meta"># class TreeNode:</span></span><br><span class="line"><span class="meta">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="meta">#         self.val = val</span></span><br><span class="line"><span class="meta">#         self.left = left</span></span><br><span class="line"><span class="meta">#         self.right = right</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="function">def <span class="title">constructFromPrePost</span><span class="params">(self, preorder: List[<span class="type">int</span>], postorder: List[<span class="type">int</span>])</span> -&gt; Optional[TreeNode]:</span></span><br><span class="line"><span class="function">        n =</span> <span class="built_in">len</span>(preorder)</span><br><span class="line">        index = &#123;x:i <span class="keyword">for</span> i,x in <span class="built_in">enumerate</span>(postorder)&#125;</span><br><span class="line">        def <span class="built_in">buildTree</span>(preorder_left:<span class="type">int</span> , preorder_right:<span class="type">int</span> , postorder_left:<span class="type">int</span> , postorder_right:<span class="type">int</span> ):</span><br><span class="line">            <span class="keyword">if</span> preorder_left&gt;preorder_right:</span><br><span class="line">                <span class="keyword">return</span> None</span><br><span class="line">            <span class="keyword">if</span> preorder_left == preorder_right:</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">TreeNode</span>(preorder[preorder_left])</span><br><span class="line">            left_size = index[preorder[preorder_left+<span class="number">1</span>]] - postorder_left + <span class="number">1</span></span><br><span class="line">            left = <span class="built_in">buildTree</span>(preorder_left+<span class="number">1</span>, preorder_left+left_size, postorder_left, postorder_left+left_size<span class="number">-1</span>)</span><br><span class="line">            right = <span class="built_in">buildTree</span>(preorder_left+left_size+<span class="number">1</span>, preorder_right, postorder_left+left_size, postorder_right<span class="number">-1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">TreeNode</span>(preorder[preorder_left], left, right)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">buildTree</span>(<span class="number">0</span>,n<span class="number">-1</span>,<span class="number">0</span>,n<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>test1<br>test2<br>test3</p>
+</blockquote>
+<ul>
+<li>test1</li>
+<li>test2</li>
+<li>test3</li>
+</ul>
+<hr>
+
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-02-22</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 2024-2024 China 
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊知之愈明，则行之愈笃；行之愈笃，则知之愈益明🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+    
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+
+
+    <!--暗黑模式-->
+    <script src="/js/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+        const options = {
+            bottom: '53px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '42px', // default: 'unset'
+            time: '0.3s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+        }
+    
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+  
+</html>
