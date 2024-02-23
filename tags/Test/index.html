@@ -4,7 +4,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
-    <meta name="description" content="Test" />
+    <meta name="description" content="" />
     <meta name="hexo-theme-A4" content="v1.8.4" />
     <link rel="alternate icon" type="image/webp" href="/img/sf_1.jpg">
     <title>ShuFuJia</title>
@@ -50,7 +50,7 @@
     
     
 
-<meta name="generator" content="Hexo 7.1.1"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
     
     
     <body>
@@ -94,7 +94,11 @@
             
         
             
-                <li><a href="/tags/">标签</a></li>
+                <li><i>
+                    
+                        <a style="color: #4e7dde;" href="/tags/">标签</a>
+                    
+                </i></li>
             
         
     </ul>
@@ -104,76 +108,35 @@
                     
 
                     
+                            <div class="archive-list">
+  <ul class="archive">
+
+    
+    <span>📌<i>Test</i></span>
+      
+      
+      
+    
+    
+    
+  
+    
+        <li>
+        <span class="archive-date">2024-02-23</span>
+        <div class="archive-main">
+            <a class="archive-title" href="/2024/02/23/Test/">Test</a>
+        </div>
+        </li>
+    
+  
+  </ul>
+</div>
+
+<!--  --> 
+                    
                     
                     
                     <!--说明是文章post页面-->
-                    
-                        <div class="post-main">
-
-    
-        <div class="post-main-title">
-            Test
-        </div>
-      
-    
-
-    <div class="post-md">
-        
-            
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Test"><span class="post-toc-text">Test</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Test-1"><span class="post-toc-text">Test</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Test-2"><span class="post-toc-text">Test</span></a></li></ol></li></ol></li></ol>
-            
-        
-        <h1 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1><h2 id="Test-1"><a href="#Test-1" class="headerlink" title="Test"></a>Test</h2><h3 id="Test-2"><a href="#Test-2" class="headerlink" title="Test"></a>Test</h3><pre><code class="highlight python"><span class="comment"># Definition for a binary tree node.</span>
-<span class="comment"># class TreeNode:</span>
-<span class="comment">#     def __init__(self, val=0, left=None, right=None):</span>
-<span class="comment">#         self.val = val</span>
-<span class="comment">#         self.left = left</span>
-<span class="comment">#         self.right = right</span>
-<span class="keyword">class</span> <span class="title class_">Solution</span>:
-    <span class="keyword">def</span> <span class="title function_">constructFromPrePost</span>(<span class="params">self, preorder: <span class="type">List</span>[<span class="built_in">int</span>], postorder: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">Optional</span>[TreeNode]:
-        n = <span class="built_in">len</span>(preorder)
-        index = &#123;x:i <span class="keyword">for</span> i,x <span class="keyword">in</span> <span class="built_in">enumerate</span>(postorder)&#125;
-        <span class="keyword">def</span> <span class="title function_">buildTree</span>(<span class="params">preorder_left:<span class="built_in">int</span> , preorder_right:<span class="built_in">int</span> , postorder_left:<span class="built_in">int</span> , postorder_right:<span class="built_in">int</span> </span>):
-            <span class="keyword">if</span> preorder_left&gt;preorder_right:
-                <span class="keyword">return</span> <span class="literal">None</span>
-            <span class="keyword">if</span> preorder_left == preorder_right:
-                <span class="keyword">return</span> TreeNode(preorder[preorder_left])
-            left_size = index[preorder[preorder_left+<span class="number">1</span>]] - postorder_left + <span class="number">1</span>
-            left = buildTree(preorder_left+<span class="number">1</span>, preorder_left+left_size, postorder_left, postorder_left+left_size-<span class="number">1</span>)
-            right = buildTree(preorder_left+left_size+<span class="number">1</span>, preorder_right, postorder_left+left_size, postorder_right-<span class="number">1</span>)
-            <span class="keyword">return</span> TreeNode(preorder[preorder_left], left, right)
-        <span class="keyword">return</span> buildTree(<span class="number">0</span>,n-<span class="number">1</span>,<span class="number">0</span>,n-<span class="number">1</span>)</code></pre>
-
-<blockquote>
-<p>test1<br>test2<br>test3</p>
-</blockquote>
-<ul>
-<li>test1</li>
-<li>test2</li>
-<li>test3</li>
-</ul>
-
-    </div>
-
-    <div class="post-meta">
-        <i>
-        
-            <span>2024-02-22</span>
-            
-            
-             
-        
-        </i>
-    </div>
-    
-        
-
-     
-</div>
-
-
-
-                                      
                     
                     
                     <div class="footer">

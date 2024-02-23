@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="LeetCode第384场周赛" />
+    <meta name="hexo-theme-A4" content="v1.8.4" />
+    <link rel="alternate icon" type="image/webp" href="/img/sf_1.jpg">
+    <title>ShuFuJia</title>
+
+    
+        
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+    
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+    
+    
+    <body>
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/sf_1.jpg" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">ShuFuJia</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            LeetCode第384场周赛
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3033-%E4%BF%AE%E6%94%B9%E7%9F%A9%E9%98%B5-%E7%AE%80%E5%8D%95"><span class="post-toc-text">3033. 修改矩阵 简单</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3034-%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E6%95%B0%E7%9B%AE-I-%E4%B8%AD%E7%AD%89"><span class="post-toc-text">3034. 匹配模式数组的子数组数目 I 中等</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3035-%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E9%87%8F-%E4%B8%AD%E7%AD%89"><span class="post-toc-text">3035. 回文字符串的最大数量 中等</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3036-%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E6%95%B0%E7%9B%AE-II-%E5%9B%B0%E9%9A%BE"><span class="post-toc-text">3036. 匹配模式数组的子数组数目 II 困难</span></a></li></ol>
+            
+        
+        <h1 id="3033-修改矩阵-简单"><a href="#3033-修改矩阵-简单" class="headerlink" title="3033. 修改矩阵 简单"></a>3033. 修改矩阵 <font color='#00baa4' size=2>简单</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/modify-the-matrix/">3033. 修改矩阵</a></p>
+<p><strong>分析：</strong><br>获取每一列的最大元素，将矩阵中的 -1 替换成每一列的最大元素。</p>
+<p><strong>代码：</strong></p>
+<pre><code class="cpp">class Solution &#123;
+public:
+    vector&lt;vector&lt;int&gt;&gt; modifiedMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;
+        int m=matrix.size(), n=matrix[0].size();
+        vector&lt;int&gt; x,y;
+        for(int i=0;i&lt;n;i++)&#123;
+            int t = -1;
+            x.clear(),y.clear();
+            for(int j=0;j&lt;m;j++)&#123;
+                if(matrix[j][i]==-1) x.push_back(j),y.push_back(i);
+                else t=max(t,matrix[j][i]);
+            &#125;
+            for(int k=0;k&lt;x.size();k++)&#123;
+                matrix[x[k]][y[k]]=t;
+            &#125;
+        &#125;
+        return matrix;
+    &#125;
+&#125;;
+</code></pre>
+<p><br></br></p>
+<h1 id="3034-匹配模式数组的子数组数目-I-中等"><a href="#3034-匹配模式数组的子数组数目-I-中等" class="headerlink" title="3034. 匹配模式数组的子数组数目 I 中等"></a>3034. 匹配模式数组的子数组数目 I <font color='#ffbd00' size=2>中等</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-subarrays-that-match-a-pattern-i/description/">3034. 匹配模式数组的子数组数目 I</a></p>
+<p><strong>分析：</strong><br>根据 <strong>nums</strong> 中各个元素的值，计算得到其对应的 <strong>匹配模式数组 nums_pattern</strong>。<br>再在 <strong>nums_pattern</strong> 中寻找子数组 <strong>pattern</strong> 的数量。</p>
+<p><strong>代码：</strong></p>
+<pre><code class="cpp">class Solution &#123;
+public:
+    int countMatchingSubarrays(vector&lt;int&gt;&amp; nums, vector&lt;int&gt;&amp; pattern) &#123;
+        int n=nums.size(), m=pattern.size(), ans=0;
+        vector&lt;int&gt; cnt;
+        for(int i=1;i&lt;n;i++)&#123;
+            if(nums[i]&gt;nums[i-1]) cnt.push_back(1);
+            else if(nums[i]==nums[i-1]) cnt.push_back(0);
+            else cnt.push_back(-1);
+        &#125;
+        for(int i=0;i&lt;cnt.size()-m+1;i++)&#123;
+            for(int j=0;j&lt;m;j++)&#123;
+                if(cnt[i+j]!=pattern[j]) break;
+                if(j==m-1) ans++;
+            &#125;
+        &#125;
+        return ans;
+    &#125;
+&#125;;
+</code></pre>
+<p><br></br></p>
+<h1 id="3035-回文字符串的最大数量-中等"><a href="#3035-回文字符串的最大数量-中等" class="headerlink" title="3035. 回文字符串的最大数量 中等"></a>3035. 回文字符串的最大数量 <font color='#ffbd00' size=2>中等</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-palindromes-after-operations/description/">3035. 回文字符串的最大数量</a></p>
+<p><strong>分析：</strong><br>题目求的是最终为回文字符串的数量，并非最小的交换次数，因此转换思维直接 <strong>构造</strong> 回文字符串。</p>
+<ul>
+<li>首先统计所有字符串中各个小写字母的出现次数，同时记录各个字符串的长度。</li>
+<li>对字符串长度数组进行升序排序（构造长的回文字符串时，可能会导致多个短的字符串构不成回文字符串）。</li>
+<li>利用贪心思维构造回文字符串<ul>
+<li>正常情况下，一次直接填入偶数个字符保证字符串为回文字符串。</li>
+<li>如果字符串长度为奇数，不能填入偶数字符时，计数数组 cnt 中寻找是否有剩余次数为奇数的字符，否则返回还没使用完的字符。</li>
+</ul>
+</li>
+<li>对于 <strong>能直接使用偶数字符对填充完毕</strong>，或者 <strong>剩一个字符的字符串</strong>，最终都能构成回文字符串，此时数量 +1。最终即为回文字符串的最大数量。</li>
+</ul>
+<p><strong>代码：</strong></p>
+<pre><code class="cpp">class Solution &#123;
+public:
+    int findOdd(int cnt[])&#123;
+        int ans=-1;
+        for(int i=0;i&lt;26;i++)&#123;
+            if(cnt[i]%2==1) return i;
+            else if(cnt[i]&gt;0) ans=i;
+        &#125;
+        return ans;
+    &#125;
+
+    int maxPalindromesAfterOperations(vector&lt;string&gt;&amp; words) &#123;
+        int cnt[26], ans=0;memset(cnt, 0, sizeof(cnt));
+        vector&lt;int&gt; t;
+        for(auto word : words)&#123;
+            for(auto i : word)&#123;
+                cnt[i - &#39;a&#39;]++;
+            &#125;
+            t.push_back(word.length());
+        &#125;
+        sort(t.begin(), t.end());
+        for(int i : t)&#123;
+            int tmp = i;
+            for(int j=0;j&lt;26&amp;&amp;tmp&gt;1;j++)&#123;
+                int tt = tmp/2,tc = cnt[j]/2;
+                if(tt*2&lt;=cnt[j])&#123;
+                    tmp-=tt*2;
+                    cnt[j]-=tt*2;
+                &#125;else&#123;
+                    tmp-=tc*2;
+                    cnt[j]-=tc*2;
+                &#125;
+            &#125;
+            if(tmp==0)&#123;ans++;continue;&#125;
+            if(tmp==1)&#123;
+                cnt[findOdd(cnt)]--;ans++;&#125;
+            else&#123;
+                int j=0;
+                while(tmp)&#123;
+                    if(cnt[j]&gt;0)&#123;
+                        if(cnt[j]&gt;=tmp) cnt[j]-=tmp,tmp=0;
+                        else tmp-=cnt[j],cnt[j]=0;
+                    &#125;
+                    j++;
+                &#125;
+            &#125;
+        &#125;
+        return ans;
+    &#125;
+&#125;;
+</code></pre>
+<p><strong>更加巧妙方法</strong>：利用位运算。</p>
+<pre><code class="cpp">class Solution &#123;
+public:
+    int maxPalindromesAfterOperations(vector&lt;string&gt;&amp; words) &#123;
+        int ans = 0, tot = 0, mask = 0;
+        for (auto &amp;w : words) &#123;
+            tot += w.length();
+            for (char c : w) &#123;
+                mask ^= 1 &lt;&lt; (c - &#39;a&#39;); // 对于出现奇数次的字符，对应位为1，否则为0
+            &#125;
+        &#125;
+        tot -= __builtin_popcount(mask); // 减去无法构成相同字符对的字符（单个的字符）
+        cout&lt;&lt;tot&lt;&lt;endl;
+        ranges::sort(words, [](const auto &amp;a, const auto &amp;b) &#123;
+            return a.length() &lt; b.length();
+        &#125;);
+        for (auto &amp;w : words) &#123;
+            tot -= w.length() / 2 * 2; // 长度为奇数的字符串，不考虑中间的单个字符
+            if (tot &lt; 0) break; // 如果相同字符对无法构建剩下的回文字符串，则跳出循环，此即为回文字符串的最大数量
+            ans++;
+        &#125;
+        return ans;
+    &#125;
+&#125;;
+</code></pre>
+<p><br></br></p>
+<h1 id="3036-匹配模式数组的子数组数目-II-困难"><a href="#3036-匹配模式数组的子数组数目-II-困难" class="headerlink" title="3036. 匹配模式数组的子数组数目 II 困难"></a>3036. 匹配模式数组的子数组数目 II <font color='#ff0044' size=2>困难</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-subarrays-that-match-a-pattern-ii/">3036. 匹配模式数组的子数组数目 II</a></p>
+<p><strong>分析：</strong><br>根据 nums 中各个元素的值，计算得到其对应的 <strong>匹配模式数组 nums_pattern</strong>。<br>再在 <strong>nums_pattern</strong> 中寻找子数组 <strong>pattern</strong> 的数量，即数组的模式匹配，可以利用 <strong>KMP算法</strong> 解决。</p>
+<p><strong>代码：</strong></p>
+<pre><code class="cpp">class Solution &#123;
+public:
+    int countMatchingSubarrays(vector&lt;int&gt;&amp; nums, vector&lt;int&gt;&amp; pattern) &#123;
+        int n=nums.size(), m=pattern.size(), ans=0;
+        vector&lt;int&gt; cnt, ne(m);
+        for(int i=1;i&lt;n;i++)&#123;
+            if(nums[i]&gt;nums[i-1]) cnt.push_back(1);
+            else if(nums[i]==nums[i-1]) cnt.push_back(0);
+            else cnt.push_back(-1);
+        &#125;
+        ne[0]=-1;
+        for(int i=1,j=-1;i&lt;m;i++)&#123;
+            while(j!=-1&amp;&amp;pattern[i]!=pattern[j+1]) j=ne[j];
+            if(pattern[i]==pattern[j+1]) j++;
+            ne[i]=j;
+        &#125;
+        for(int i=0,j=-1;i&lt;n-1;i++)&#123;
+            while(j!=-1&amp;&amp;cnt[i]!=pattern[j+1]) j=ne[j];
+            if(cnt[i]==pattern[j+1]) j++;
+            if(j==m-1)&#123;
+                ans++;
+                j=ne[j];
+            &#125;
+        &#125;
+        return ans;
+    &#125;
+&#125;;
+</code></pre>
+
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-02-23</span>
+            
+                <span>该篇文章被 John Doe</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/LeetCode/'>
+                            LeetCode
+                        </a>
+                    
+                        <a href='/tags/%E7%AE%97%E6%B3%95/'>
+                            算法
+                        </a>
+                    
+                </span>
+             
+             
+        
+        </i>
+    </div>
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 2024-2024 China 
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊知之愈明，则行之愈笃；行之愈笃，则知之愈益明🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+    
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+
+
+    <!--暗黑模式-->
+    <script src="/js/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+        const options = {
+            bottom: '53px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '42px', // default: 'unset'
+            time: '0.3s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+        }
+    
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+  
+</html>

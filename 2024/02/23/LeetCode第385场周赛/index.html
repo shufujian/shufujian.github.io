@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="LeetCode第385场周赛" />
+    <meta name="hexo-theme-A4" content="v1.8.4" />
+    <link rel="alternate icon" type="image/webp" href="/img/sf_1.jpg">
+    <title>ShuFuJia</title>
+
+    
+        
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+    
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+    
+    
+    <body>
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/sf_1.jpg" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">ShuFuJia</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            LeetCode第385场周赛
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3042-%E7%BB%9F%E8%AE%A1%E5%89%8D%E5%90%8E%E7%BC%80%E4%B8%8B%E6%A0%87%E5%AF%B9-I-%E7%AE%80%E5%8D%95"><span class="post-toc-text">3042. 统计前后缀下标对 I 简单</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3043-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80%E7%9A%84%E9%95%BF%E5%BA%A6-%E4%B8%AD%E7%AD%89"><span class="post-toc-text">3043. 最长公共前缀的长度 中等</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3044-%E5%87%BA%E7%8E%B0%E9%A2%91%E7%8E%87%E6%9C%80%E9%AB%98%E7%9A%84%E8%B4%A8%E6%95%B0-%E4%B8%AD%E7%AD%89"><span class="post-toc-text">3044. 出现频率最高的质数 中等</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3045-%E7%BB%9F%E8%AE%A1%E5%89%8D%E5%90%8E%E7%BC%80%E4%B8%8B%E6%A0%87%E5%AF%B9-II-%E5%9B%B0%E9%9A%BE"><span class="post-toc-text">3045. 统计前后缀下标对 II 困难</span></a></li></ol>
+            
+        
+        <h1 id="3042-统计前后缀下标对-I-简单"><a href="#3042-统计前后缀下标对-I-简单" class="headerlink" title="3042. 统计前后缀下标对 I 简单"></a>3042. 统计前后缀下标对 I <font color='#00baa4' size=2>简单</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-prefix-and-suffix-pairs-i/description/">3042. 统计前后缀下标对 I</a></p>
+<p><strong>分析：</strong><br>数据量较少，直接暴力即可，也可以采用 构建前后缀字典树（<a target="_blank" rel="noopener" href="https://editor.csdn.net/md?not_checkout=1&spm=1010.2135.3001.5352&articleId=136232238#3045__II_font_colorff0044_size2font_173">3045. 统计前后缀下标对 II</a>）。<br><strong>代码：</strong></p>
+<pre><code class="cpp">class Solution &#123;
+public:
+    int countPrefixSuffixPairs(vector&lt;string&gt;&amp; words) &#123;
+        int n=words.size(), ans=0;
+        for(int i=0;i&lt;n;i++)&#123;
+            int l = words[i].length();
+            for(int j=i+1;j&lt;n;j++)&#123;
+                int le = words[j].length();
+                if(l&gt;le) continue;
+                if(words[i]==words[j].substr(0,l) &amp;&amp; words[i]==words[j].substr(le-l,l)) ans++;
+            &#125;
+        &#125;
+        return ans;
+    &#125;
+&#125;;
+</code></pre>
+<p><br></br></p>
+<h1 id="3043-最长公共前缀的长度-中等"><a href="#3043-最长公共前缀的长度-中等" class="headerlink" title="3043. 最长公共前缀的长度 中等"></a>3043. 最长公共前缀的长度 <font color='#ffbd00' size=2>中等</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-the-length-of-the-longest-common-prefix/description/">3043. 最长公共前缀的长度</a></p>
+<p><strong>分析：</strong><br>对 <code>arr1</code> 构建字典树，在遍历 <code>arr2</code> 进行比较即可。<br><strong>代码：</strong></p>
+<pre><code class="cpp">class Node&#123;
+public:
+    int val;
+    vector&lt;Node*&gt; ne;
+    Node() : val(0), ne(10, nullptr) &#123;&#125;
+    Node(int v) : val(v), ne(10, nullptr) &#123;&#125;
+&#125;;
+
+class Solution &#123;
+public:
+    void buildTree(Node* root, string&amp; s, int i)&#123;
+        if(i&gt;= s.length()) return;
+        int k = s[i] - &#39;0&#39;;
+        if(root-&gt;ne[k] == nullptr)&#123;
+            Node *node = new Node(s[i]-&#39;0&#39;);
+            root-&gt;ne[k] = node;
+        &#125;
+        
+        buildTree(root-&gt;ne[k], s, i+1);
+    &#125;
+
+    int longestCommonPrefix(vector&lt;int&gt;&amp; arr1, vector&lt;int&gt;&amp; arr2) &#123;
+        Node* root = new Node();
+        for(int&amp; a : arr1)&#123;
+            string s = to_string(a);
+            buildTree(root, s, 0);
+        &#125;
+        int ans=0;
+        for(int&amp; a : arr2)&#123;
+            string s = to_string(a);
+            int i=0;
+            Node* p=root;
+            for(;i&lt;s.length();i++)&#123;
+                int k = s[i]-&#39;0&#39;;
+                if(p-&gt;ne[k]==nullptr) break;
+                p=p-&gt;ne[k];
+            &#125;
+            ans=max(i,ans);
+        &#125;
+        return ans;
+    &#125;
+&#125;;
+</code></pre>
+<p><br></br></p>
+<h1 id="3044-出现频率最高的质数-中等"><a href="#3044-出现频率最高的质数-中等" class="headerlink" title="3044. 出现频率最高的质数 中等"></a>3044. 出现频率最高的质数 <font color='#ffbd00' size=2>中等</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/most-frequent-prime/description/">3044. 出现频率最高的质数</a></p>
+<p><strong>分析：</strong><br>选择合适的判断质数的算法，按照题意模拟即可。</p>
+<blockquote>
+<p><strong>注意：</strong> 如果对数据范围内的质数进行打表，需要注意调用方式，否则会出现多次计算，最终超时。</p>
+</blockquote>
+<p><strong>代码：</strong><br>对质数打表，再判断。</p>
+<pre><code class="cpp">const int ma = 1e7+5;
+vector&lt;int&gt; prime(ma,1);
+
+void getPrimes()&#123;
+    prime[0]=prime[1]=0;
+    for(int i=2;i&lt;ma;i++)&#123;
+        if(prime[i]==0) continue;
+        for(int j=2;j*i&lt;ma;j++) prime[j*i]=0;
+    &#125;
+    for(int i=2;i&lt;10;i++) prime[i]=0;
+&#125;
+
+void init()&#123;
+    static bool ini = false;
+    if(!ini)&#123;
+        ini = true;
+        getPrimes();
+    &#125;
+&#125;
+
+class Solution &#123;
+public:
+
+    int mostFrequentPrime(vector&lt;vector&lt;int&gt;&gt;&amp; mat) &#123;
+        init();
+        int n=mat.size(), m=mat[0].size(), ans=-1, mm=0;
+        unordered_map&lt;int,int&gt; mp;
+        int move_x[] = &#123;0,1,1,1,0,-1,-1,-1&#125;, move_y[] = &#123;1,1,0,-1,-1,-1,0,1&#125;;
+        for(int i=0;i&lt;n;i++)&#123;
+            for(int j=0;j&lt;m;j++)&#123;
+                for(int k=0;k&lt;8;k++)&#123;
+                    int x=i,y=j;
+                    int m_x=move_x[k], m_y=move_y[k], t=mat[i][j];
+                    x+=m_x;y+=m_y;
+                    while(x&gt;=0&amp;&amp;y&gt;=0&amp;&amp;x&lt;n&amp;&amp;y&lt;m)&#123;
+                        t=t*10+mat[x][y];
+                        if(prime[t])&#123;
+                            mp[t]++;
+                            if(mm&lt;mp[t])&#123;
+                                ans=t;
+                                mm=mp[t];
+                            &#125;else if(mm==mp[t])&#123;
+                                ans=max(ans,t);
+                            &#125;
+                        &#125;
+                        x+=m_x;y+=m_y;
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+        return ans;
+    &#125;
+&#125;;
+</code></pre>
+<p>对每一个出现的数进行质数的判断。</p>
+<pre><code class="cpp">class Solution &#123;
+public:
+    bool isPrime(int n)&#123;
+        if(n&lt;10) return false;
+        for(int i=2;i*i&lt;=n;i++)&#123;
+            if(n%i==0) return false;
+        &#125;
+        return true;
+    &#125;
+
+    int mostFrequentPrime(vector&lt;vector&lt;int&gt;&gt;&amp; mat) &#123;
+        int n=mat.size(), m=mat[0].size(), ans=-1, mm=0;
+        unordered_map&lt;int,int&gt; mp;
+        int move_x[] = &#123;0,1,1,1,0,-1,-1,-1&#125;, move_y[] = &#123;1,1,0,-1,-1,-1,0,1&#125;;
+        for(int i=0;i&lt;n;i++)&#123;
+            for(int j=0;j&lt;m;j++)&#123;
+                for(int k=0;k&lt;8;k++)&#123;
+                    int x=i,y=j;
+                    int m_x=move_x[k], m_y=move_y[k], t=mat[i][j];
+                    x+=m_x;y+=m_y;
+                    while(x&gt;=0&amp;&amp;y&gt;=0&amp;&amp;x&lt;n&amp;&amp;y&lt;m)&#123;
+                        t=t*10+mat[x][y];
+                        if(isPrime(t))&#123;
+                            mp[t]++;
+                            if(mm&lt;mp[t])&#123;
+                                ans=t;
+                                mm=mp[t];
+                            &#125;else if(mm==mp[t])&#123;
+                                ans=max(ans,t);
+                            &#125;
+                        &#125;
+                        x+=m_x;y+=m_y;
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+        return ans;
+    &#125;
+&#125;;
+</code></pre>
+<p><br></br></p>
+<h1 id="3045-统计前后缀下标对-II-困难"><a href="#3045-统计前后缀下标对-II-困难" class="headerlink" title="3045. 统计前后缀下标对 II 困难"></a>3045. 统计前后缀下标对 II <font color='#ff0044' size=2>困难</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-prefix-and-suffix-pairs-ii/description/">3045. 统计前后缀下标对 II</a></p>
+<p><strong>分析：</strong><br>对于前缀，可以通过构建 <strong>字典树Trie</strong>，进行判断。<br>而后缀，观察字符串 <code>S = &quot;abcabc&quot;</code> 和 <code>s1 = &quot;abc&quot;</code>的前后缀情况：</p>
+<blockquote>
+<p><code>S</code>的前后缀与<code>s1</code>一致，即<code>S[0...2]</code> 和 <code>S[3...5]</code> 均与<code>s1</code>相等。</p>
+<ul>
+<li><code>S[0], S[5] = a, c</code> , <code>s1[0], s1[2] = a, c</code></li>
+<li><code>S[1], S[4] = b, b</code> , <code>s1[1], s1[1] = b, b</code></li>
+<li><code>S[2], S[3] = c, a</code> , <code>s1[2], s1[0] = c, a</code></li>
+</ul>
+<p>易得若<code>S</code>(长度为<code>L</code>)的前后缀与<code>s1</code>(长度为<code>l</code>)完全一致则有：</p>
+<ul>
+<li><code>S[0], S[L-1] == s1[0], s1[l-1]</code> </li>
+<li><code>S[1], S[L-2] == s1[1], s1[l-2]</code></li>
+<li>…</li>
+<li><code>S[l-1], S[L-l+1] == s1[l-1], s1[0]</code></li>
+</ul>
+</blockquote>
+<p>根据得到的性质，在构建字典树时，同时记录前缀与后缀的字符，再进行对比即可。</p>
+<blockquote>
+<p><strong>注意：</strong> <code>i &lt; j</code>，因此不需要根据字符串长度进行排序。</p>
+</blockquote>
+<p>也可以正常构建字典树来对比前缀，同时使用 <strong>Z函数（拓展KMP）</strong>来对比后缀。</p>
+<p><strong>代码：</strong></p>
+<pre><code class="cpp">struct Node &#123;
+    unordered_map&lt;int, Node*&gt; son;
+    int cnt=0;
+&#125;;
+
+class Solution &#123;
+public:
+    long long countPrefixSuffixPairs(vector&lt;string&gt;&amp; words) &#123;
+        long long ans=0;
+        Node *root = new Node();
+        for(string&amp; s : words)&#123;
+            int n = s.length();
+            Node *cur = root;
+            for(int i=0;i&lt;n;i++)&#123;
+                int p = (int) ((s[i] - &#39;a&#39;) &lt;&lt; 5) | (s[n - i - 1] - &#39;a&#39;); // 仅26个字母，五位二进制即可完全表示，使用十位二进制数来表示（前五位表示前缀，后五位表示后缀）
+                if(cur-&gt;son[p] == nullptr)&#123;
+                    cur-&gt;son[p] = new Node();
+                &#125;
+                cur = cur-&gt;son[p];
+                ans += cur-&gt;cnt;
+            &#125;
+            cur-&gt;cnt++;
+        &#125;
+        return ans;
+    &#125;
+&#125;;
+</code></pre>
+
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-02-23</span>
+            
+                <span>该篇文章被 John Doe</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/LeetCode/'>
+                            LeetCode
+                        </a>
+                    
+                        <a href='/tags/%E7%AE%97%E6%B3%95/'>
+                            算法
+                        </a>
+                    
+                </span>
+             
+             
+        
+        </i>
+    </div>
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 2024-2024 China 
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊知之愈明，则行之愈笃；行之愈笃，则知之愈益明🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+    
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+
+
+    <!--暗黑模式-->
+    <script src="/js/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+        const options = {
+            bottom: '53px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '42px', // default: 'unset'
+            time: '0.3s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+        }
+    
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+  
+</html>
