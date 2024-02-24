@@ -11,7 +11,7 @@
 
     
         
-<link rel="stylesheet" href="/css/a11y-dark.min.css">
+<link rel="stylesheet" href="/css/highlight/style1.css">
 
         
 <link rel="stylesheet" href="/css/reset.css">
@@ -49,8 +49,11 @@
         
     
     
+    <link href="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css
+" rel="stylesheet">
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
     
     
     <body>
@@ -66,6 +69,8 @@
             
                 <div class="shadow-drop-2-bottom paper-main">
                     
+
+
 <div class="header">
     <div class="header-container">
         <img style="
@@ -123,70 +128,13 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3042-%E7%BB%9F%E8%AE%A1%E5%89%8D%E5%90%8E%E7%BC%80%E4%B8%8B%E6%A0%87%E5%AF%B9-I-%E7%AE%80%E5%8D%95"><span class="post-toc-text">3042. 统计前后缀下标对 I 简单</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3043-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80%E7%9A%84%E9%95%BF%E5%BA%A6-%E4%B8%AD%E7%AD%89"><span class="post-toc-text">3043. 最长公共前缀的长度 中等</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3044-%E5%87%BA%E7%8E%B0%E9%A2%91%E7%8E%87%E6%9C%80%E9%AB%98%E7%9A%84%E8%B4%A8%E6%95%B0-%E4%B8%AD%E7%AD%89"><span class="post-toc-text">3044. 出现频率最高的质数 中等</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3045-%E7%BB%9F%E8%AE%A1%E5%89%8D%E5%90%8E%E7%BC%80%E4%B8%8B%E6%A0%87%E5%AF%B9-II-%E5%9B%B0%E9%9A%BE"><span class="post-toc-text">3045. 统计前后缀下标对 II 困难</span></a></li></ol>
             
         
-        <h1 id="3042-统计前后缀下标对-I-简单"><a href="#3042-统计前后缀下标对-I-简单" class="headerlink" title="3042. 统计前后缀下标对 I 简单"></a>3042. 统计前后缀下标对 I <font color='#00baa4' size=2>简单</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-prefix-and-suffix-pairs-i/description/">3042. 统计前后缀下标对 I</a></p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="3042-统计前后缀下标对-I-简单"><a href="#3042-统计前后缀下标对-I-简单" class="headerlink" title="3042. 统计前后缀下标对 I 简单"></a>3042. 统计前后缀下标对 I <font color='#00baa4' size=2>简单</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-prefix-and-suffix-pairs-i/description/">3042. 统计前后缀下标对 I</a></p>
 <p><strong>分析：</strong><br>数据量较少，直接暴力即可，也可以采用 构建前后缀字典树（<a target="_blank" rel="noopener" href="https://editor.csdn.net/md?not_checkout=1&spm=1010.2135.3001.5352&articleId=136232238#3045__II_font_colorff0044_size2font_173">3045. 统计前后缀下标对 II</a>）。<br><strong>代码：</strong></p>
-<pre><code class="cpp">class Solution &#123;
-public:
-    int countPrefixSuffixPairs(vector&lt;string&gt;&amp; words) &#123;
-        int n=words.size(), ans=0;
-        for(int i=0;i&lt;n;i++)&#123;
-            int l = words[i].length();
-            for(int j=i+1;j&lt;n;j++)&#123;
-                int le = words[j].length();
-                if(l&gt;le) continue;
-                if(words[i]==words[j].substr(0,l) &amp;&amp; words[i]==words[j].substr(le-l,l)) ans++;
-            &#125;
-        &#125;
-        return ans;
-    &#125;
-&#125;;
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countPrefixSuffixPairs</span><span class="params">(vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=words.<span class="built_in">size</span>(), ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="type">int</span> l = words[i].<span class="built_in">length</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>;j&lt;n;j++)&#123;</span><br><span class="line">                <span class="type">int</span> le = words[j].<span class="built_in">length</span>();</span><br><span class="line">                <span class="keyword">if</span>(l&gt;le) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span>(words[i]==words[j].<span class="built_in">substr</span>(<span class="number">0</span>,l) &amp;&amp; words[i]==words[j].<span class="built_in">substr</span>(le-l,l)) ans++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><br></br></p>
 <h1 id="3043-最长公共前缀的长度-中等"><a href="#3043-最长公共前缀的长度-中等" class="headerlink" title="3043. 最长公共前缀的长度 中等"></a>3043. 最长公共前缀的长度 <font color='#ffbd00' size=2>中等</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-the-length-of-the-longest-common-prefix/description/">3043. 最长公共前缀的长度</a></p>
 <p><strong>分析：</strong><br>对 <code>arr1</code> 构建字典树，在遍历 <code>arr2</code> 进行比较即可。<br><strong>代码：</strong></p>
-<pre><code class="cpp">class Node&#123;
-public:
-    int val;
-    vector&lt;Node*&gt; ne;
-    Node() : val(0), ne(10, nullptr) &#123;&#125;
-    Node(int v) : val(v), ne(10, nullptr) &#123;&#125;
-&#125;;
-
-class Solution &#123;
-public:
-    void buildTree(Node* root, string&amp; s, int i)&#123;
-        if(i&gt;= s.length()) return;
-        int k = s[i] - &#39;0&#39;;
-        if(root-&gt;ne[k] == nullptr)&#123;
-            Node *node = new Node(s[i]-&#39;0&#39;);
-            root-&gt;ne[k] = node;
-        &#125;
-        
-        buildTree(root-&gt;ne[k], s, i+1);
-    &#125;
-
-    int longestCommonPrefix(vector&lt;int&gt;&amp; arr1, vector&lt;int&gt;&amp; arr2) &#123;
-        Node* root = new Node();
-        for(int&amp; a : arr1)&#123;
-            string s = to_string(a);
-            buildTree(root, s, 0);
-        &#125;
-        int ans=0;
-        for(int&amp; a : arr2)&#123;
-            string s = to_string(a);
-            int i=0;
-            Node* p=root;
-            for(;i&lt;s.length();i++)&#123;
-                int k = s[i]-&#39;0&#39;;
-                if(p-&gt;ne[k]==nullptr) break;
-                p=p-&gt;ne[k];
-            &#125;
-            ans=max(i,ans);
-        &#125;
-        return ans;
-    &#125;
-&#125;;
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Node</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    vector&lt;Node*&gt; ne;</span><br><span class="line">    <span class="built_in">Node</span>() : <span class="built_in">val</span>(<span class="number">0</span>), <span class="built_in">ne</span>(<span class="number">10</span>, <span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">int</span> v) : <span class="built_in">val</span>(v), <span class="built_in">ne</span>(<span class="number">10</span>, <span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">buildTree</span><span class="params">(Node* root, string&amp; s, <span class="type">int</span> i)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;= s.<span class="built_in">length</span>()) <span class="keyword">return</span>;</span><br><span class="line">        <span class="type">int</span> k = s[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;ne[k] == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            Node *node = <span class="keyword">new</span> <span class="built_in">Node</span>(s[i]-<span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">            root-&gt;ne[k] = node;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">buildTree</span>(root-&gt;ne[k], s, i+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">longestCommonPrefix</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr1, vector&lt;<span class="type">int</span>&gt;&amp; arr2)</span> </span>&#123;</span><br><span class="line">        Node* root = <span class="keyword">new</span> <span class="built_in">Node</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span>&amp; a : arr1)&#123;</span><br><span class="line">            string s = <span class="built_in">to_string</span>(a);</span><br><span class="line">            <span class="built_in">buildTree</span>(root, s, <span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span>&amp; a : arr2)&#123;</span><br><span class="line">            string s = <span class="built_in">to_string</span>(a);</span><br><span class="line">            <span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">            Node* p=root;</span><br><span class="line">            <span class="keyword">for</span>(;i&lt;s.<span class="built_in">length</span>();i++)&#123;</span><br><span class="line">                <span class="type">int</span> k = s[i]-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">                <span class="keyword">if</span>(p-&gt;ne[k]==<span class="literal">nullptr</span>) <span class="keyword">break</span>;</span><br><span class="line">                p=p-&gt;ne[k];</span><br><span class="line">            &#125;</span><br><span class="line">            ans=<span class="built_in">max</span>(i,ans);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><br></br></p>
 <h1 id="3044-出现频率最高的质数-中等"><a href="#3044-出现频率最高的质数-中等" class="headerlink" title="3044. 出现频率最高的质数 中等"></a>3044. 出现频率最高的质数 <font color='#ffbd00' size=2>中等</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/most-frequent-prime/description/">3044. 出现频率最高的质数</a></p>
 <p><strong>分析：</strong><br>选择合适的判断质数的算法，按照题意模拟即可。</p>
@@ -194,101 +142,10 @@ public:
 <p><strong>注意：</strong> 如果对数据范围内的质数进行打表，需要注意调用方式，否则会出现多次计算，最终超时。</p>
 </blockquote>
 <p><strong>代码：</strong><br>对质数打表，再判断。</p>
-<pre><code class="cpp">const int ma = 1e7+5;
-vector&lt;int&gt; prime(ma,1);
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> ma = <span class="number">1e7</span>+<span class="number">5</span>;</span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">prime</span><span class="params">(ma,<span class="number">1</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">getPrimes</span><span class="params">()</span></span>&#123;</span><br><span class="line">    prime[<span class="number">0</span>]=prime[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;ma;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(prime[i]==<span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">2</span>;j*i&lt;ma;j++) prime[j*i]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;<span class="number">10</span>;i++) prime[i]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">bool</span> ini = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(!ini)&#123;</span><br><span class="line">        ini = <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">getPrimes</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">mostFrequentPrime</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; mat)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">init</span>();</span><br><span class="line">        <span class="type">int</span> n=mat.<span class="built_in">size</span>(), m=mat[<span class="number">0</span>].<span class="built_in">size</span>(), ans=<span class="number">-1</span>, mm=<span class="number">0</span>;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; mp;</span><br><span class="line">        <span class="type">int</span> move_x[] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">-1</span>&#125;, move_y[] = &#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;<span class="number">8</span>;k++)&#123;</span><br><span class="line">                    <span class="type">int</span> x=i,y=j;</span><br><span class="line">                    <span class="type">int</span> m_x=move_x[k], m_y=move_y[k], t=mat[i][j];</span><br><span class="line">                    x+=m_x;y+=m_y;</span><br><span class="line">                    <span class="keyword">while</span>(x&gt;=<span class="number">0</span>&amp;&amp;y&gt;=<span class="number">0</span>&amp;&amp;x&lt;n&amp;&amp;y&lt;m)&#123;</span><br><span class="line">                        t=t*<span class="number">10</span>+mat[x][y];</span><br><span class="line">                        <span class="keyword">if</span>(prime[t])&#123;</span><br><span class="line">                            mp[t]++;</span><br><span class="line">                            <span class="keyword">if</span>(mm&lt;mp[t])&#123;</span><br><span class="line">                                ans=t;</span><br><span class="line">                                mm=mp[t];</span><br><span class="line">                            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(mm==mp[t])&#123;</span><br><span class="line">                                ans=<span class="built_in">max</span>(ans,t);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        x+=m_x;y+=m_y;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-void getPrimes()&#123;
-    prime[0]=prime[1]=0;
-    for(int i=2;i&lt;ma;i++)&#123;
-        if(prime[i]==0) continue;
-        for(int j=2;j*i&lt;ma;j++) prime[j*i]=0;
-    &#125;
-    for(int i=2;i&lt;10;i++) prime[i]=0;
-&#125;
-
-void init()&#123;
-    static bool ini = false;
-    if(!ini)&#123;
-        ini = true;
-        getPrimes();
-    &#125;
-&#125;
-
-class Solution &#123;
-public:
-
-    int mostFrequentPrime(vector&lt;vector&lt;int&gt;&gt;&amp; mat) &#123;
-        init();
-        int n=mat.size(), m=mat[0].size(), ans=-1, mm=0;
-        unordered_map&lt;int,int&gt; mp;
-        int move_x[] = &#123;0,1,1,1,0,-1,-1,-1&#125;, move_y[] = &#123;1,1,0,-1,-1,-1,0,1&#125;;
-        for(int i=0;i&lt;n;i++)&#123;
-            for(int j=0;j&lt;m;j++)&#123;
-                for(int k=0;k&lt;8;k++)&#123;
-                    int x=i,y=j;
-                    int m_x=move_x[k], m_y=move_y[k], t=mat[i][j];
-                    x+=m_x;y+=m_y;
-                    while(x&gt;=0&amp;&amp;y&gt;=0&amp;&amp;x&lt;n&amp;&amp;y&lt;m)&#123;
-                        t=t*10+mat[x][y];
-                        if(prime[t])&#123;
-                            mp[t]++;
-                            if(mm&lt;mp[t])&#123;
-                                ans=t;
-                                mm=mp[t];
-                            &#125;else if(mm==mp[t])&#123;
-                                ans=max(ans,t);
-                            &#125;
-                        &#125;
-                        x+=m_x;y+=m_y;
-                    &#125;
-                &#125;
-            &#125;
-        &#125;
-        return ans;
-    &#125;
-&#125;;
-</code></pre>
 <p>对每一个出现的数进行质数的判断。</p>
-<pre><code class="cpp">class Solution &#123;
-public:
-    bool isPrime(int n)&#123;
-        if(n&lt;10) return false;
-        for(int i=2;i*i&lt;=n;i++)&#123;
-            if(n%i==0) return false;
-        &#125;
-        return true;
-    &#125;
-
-    int mostFrequentPrime(vector&lt;vector&lt;int&gt;&gt;&amp; mat) &#123;
-        int n=mat.size(), m=mat[0].size(), ans=-1, mm=0;
-        unordered_map&lt;int,int&gt; mp;
-        int move_x[] = &#123;0,1,1,1,0,-1,-1,-1&#125;, move_y[] = &#123;1,1,0,-1,-1,-1,0,1&#125;;
-        for(int i=0;i&lt;n;i++)&#123;
-            for(int j=0;j&lt;m;j++)&#123;
-                for(int k=0;k&lt;8;k++)&#123;
-                    int x=i,y=j;
-                    int m_x=move_x[k], m_y=move_y[k], t=mat[i][j];
-                    x+=m_x;y+=m_y;
-                    while(x&gt;=0&amp;&amp;y&gt;=0&amp;&amp;x&lt;n&amp;&amp;y&lt;m)&#123;
-                        t=t*10+mat[x][y];
-                        if(isPrime(t))&#123;
-                            mp[t]++;
-                            if(mm&lt;mp[t])&#123;
-                                ans=t;
-                                mm=mp[t];
-                            &#125;else if(mm==mp[t])&#123;
-                                ans=max(ans,t);
-                            &#125;
-                        &#125;
-                        x+=m_x;y+=m_y;
-                    &#125;
-                &#125;
-            &#125;
-        &#125;
-        return ans;
-    &#125;
-&#125;;
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isPrime</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&lt;<span class="number">10</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i*i&lt;=n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(n%i==<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">mostFrequentPrime</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; mat)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=mat.<span class="built_in">size</span>(), m=mat[<span class="number">0</span>].<span class="built_in">size</span>(), ans=<span class="number">-1</span>, mm=<span class="number">0</span>;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; mp;</span><br><span class="line">        <span class="type">int</span> move_x[] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">-1</span>&#125;, move_y[] = &#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;<span class="number">8</span>;k++)&#123;</span><br><span class="line">                    <span class="type">int</span> x=i,y=j;</span><br><span class="line">                    <span class="type">int</span> m_x=move_x[k], m_y=move_y[k], t=mat[i][j];</span><br><span class="line">                    x+=m_x;y+=m_y;</span><br><span class="line">                    <span class="keyword">while</span>(x&gt;=<span class="number">0</span>&amp;&amp;y&gt;=<span class="number">0</span>&amp;&amp;x&lt;n&amp;&amp;y&lt;m)&#123;</span><br><span class="line">                        t=t*<span class="number">10</span>+mat[x][y];</span><br><span class="line">                        <span class="keyword">if</span>(<span class="built_in">isPrime</span>(t))&#123;</span><br><span class="line">                            mp[t]++;</span><br><span class="line">                            <span class="keyword">if</span>(mm&lt;mp[t])&#123;</span><br><span class="line">                                ans=t;</span><br><span class="line">                                mm=mp[t];</span><br><span class="line">                            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(mm==mp[t])&#123;</span><br><span class="line">                                ans=<span class="built_in">max</span>(ans,t);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        x+=m_x;y+=m_y;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><br></br></p>
 <h1 id="3045-统计前后缀下标对-II-困难"><a href="#3045-统计前后缀下标对-II-困难" class="headerlink" title="3045. 统计前后缀下标对 II 困难"></a>3045. 统计前后缀下标对 II <font color='#ff0044' size=2>困难</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-prefix-and-suffix-pairs-ii/description/">3045. 统计前后缀下标对 II</a></p>
 <p><strong>分析：</strong><br>对于前缀，可以通过构建 <strong>字典树Trie</strong>，进行判断。<br>而后缀，观察字符串 <code>S = &quot;abcabc&quot;</code> 和 <code>s1 = &quot;abc&quot;</code>的前后缀情况：</p>
@@ -313,34 +170,12 @@ public:
 </blockquote>
 <p>也可以正常构建字典树来对比前缀，同时使用 <strong>Z函数（拓展KMP）</strong>来对比后缀。</p>
 <p><strong>代码：</strong></p>
-<pre><code class="cpp">struct Node &#123;
-    unordered_map&lt;int, Node*&gt; son;
-    int cnt=0;
-&#125;;
-
-class Solution &#123;
-public:
-    long long countPrefixSuffixPairs(vector&lt;string&gt;&amp; words) &#123;
-        long long ans=0;
-        Node *root = new Node();
-        for(string&amp; s : words)&#123;
-            int n = s.length();
-            Node *cur = root;
-            for(int i=0;i&lt;n;i++)&#123;
-                int p = (int) ((s[i] - &#39;a&#39;) &lt;&lt; 5) | (s[n - i - 1] - &#39;a&#39;); // 仅26个字母，五位二进制即可完全表示，使用十位二进制数来表示（前五位表示前缀，后五位表示后缀）
-                if(cur-&gt;son[p] == nullptr)&#123;
-                    cur-&gt;son[p] = new Node();
-                &#125;
-                cur = cur-&gt;son[p];
-                ans += cur-&gt;cnt;
-            &#125;
-            cur-&gt;cnt++;
-        &#125;
-        return ans;
-    &#125;
-&#125;;
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, Node*&gt; son;</span><br><span class="line">    <span class="type">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">countPrefixSuffixPairs</span><span class="params">(vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> ans=<span class="number">0</span>;</span><br><span class="line">        Node *root = <span class="keyword">new</span> <span class="built_in">Node</span>();</span><br><span class="line">        <span class="keyword">for</span>(string&amp; s : words)&#123;</span><br><span class="line">            <span class="type">int</span> n = s.<span class="built_in">length</span>();</span><br><span class="line">            Node *cur = root;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">                <span class="type">int</span> p = (<span class="type">int</span>) ((s[i] - <span class="string">&#x27;a&#x27;</span>) &lt;&lt; <span class="number">5</span>) | (s[n - i - <span class="number">1</span>] - <span class="string">&#x27;a&#x27;</span>); <span class="comment">// 仅26个字母，五位二进制即可完全表示，使用十位二进制数来表示（前五位表示前缀，后五位表示后缀）</span></span><br><span class="line">                <span class="keyword">if</span>(cur-&gt;son[p] == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">                    cur-&gt;son[p] = <span class="keyword">new</span> <span class="built_in">Node</span>();</span><br><span class="line">                &#125;</span><br><span class="line">                cur = cur-&gt;son[p];</span><br><span class="line">                ans += cur-&gt;cnt;</span><br><span class="line">            &#125;</span><br><span class="line">            cur-&gt;cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
     </div>
 
     <div class="post-meta">
@@ -432,15 +267,15 @@ public:
 
     
 
-    
 
 
 
-<script>
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-</script>
 
+
+
+<script src="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js
+"></script>
 
 
                 </div>

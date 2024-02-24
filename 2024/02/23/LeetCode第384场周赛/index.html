@@ -11,7 +11,7 @@
 
     
         
-<link rel="stylesheet" href="/css/a11y-dark.min.css">
+<link rel="stylesheet" href="/css/highlight/style1.css">
 
         
 <link rel="stylesheet" href="/css/reset.css">
@@ -49,8 +49,11 @@
         
     
     
+    <link href="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css
+" rel="stylesheet">
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
     
     
     <body>
@@ -66,6 +69,8 @@
             
                 <div class="shadow-drop-2-bottom paper-main">
                     
+
+
 <div class="header">
     <div class="header-container">
         <img style="
@@ -123,53 +128,15 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3033-%E4%BF%AE%E6%94%B9%E7%9F%A9%E9%98%B5-%E7%AE%80%E5%8D%95"><span class="post-toc-text">3033. 修改矩阵 简单</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3034-%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E6%95%B0%E7%9B%AE-I-%E4%B8%AD%E7%AD%89"><span class="post-toc-text">3034. 匹配模式数组的子数组数目 I 中等</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3035-%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E9%87%8F-%E4%B8%AD%E7%AD%89"><span class="post-toc-text">3035. 回文字符串的最大数量 中等</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3036-%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E6%95%B0%E7%9B%AE-II-%E5%9B%B0%E9%9A%BE"><span class="post-toc-text">3036. 匹配模式数组的子数组数目 II 困难</span></a></li></ol>
             
         
-        <h1 id="3033-修改矩阵-简单"><a href="#3033-修改矩阵-简单" class="headerlink" title="3033. 修改矩阵 简单"></a>3033. 修改矩阵 <font color='#00baa4' size=2>简单</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/modify-the-matrix/">3033. 修改矩阵</a></p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="3033-修改矩阵-简单"><a href="#3033-修改矩阵-简单" class="headerlink" title="3033. 修改矩阵 简单"></a>3033. 修改矩阵 <font color='#00baa4' size=2>简单</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/modify-the-matrix/">3033. 修改矩阵</a></p>
 <p><strong>分析：</strong><br>获取每一列的最大元素，将矩阵中的 -1 替换成每一列的最大元素。</p>
 <p><strong>代码：</strong></p>
-<pre><code class="cpp">class Solution &#123;
-public:
-    vector&lt;vector&lt;int&gt;&gt; modifiedMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;
-        int m=matrix.size(), n=matrix[0].size();
-        vector&lt;int&gt; x,y;
-        for(int i=0;i&lt;n;i++)&#123;
-            int t = -1;
-            x.clear(),y.clear();
-            for(int j=0;j&lt;m;j++)&#123;
-                if(matrix[j][i]==-1) x.push_back(j),y.push_back(i);
-                else t=max(t,matrix[j][i]);
-            &#125;
-            for(int k=0;k&lt;x.size();k++)&#123;
-                matrix[x[k]][y[k]]=t;
-            &#125;
-        &#125;
-        return matrix;
-    &#125;
-&#125;;
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">modifiedMatrix</span>(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">        <span class="type">int</span> m=matrix.<span class="built_in">size</span>(), n=matrix[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; x,y;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="type">int</span> t = <span class="number">-1</span>;</span><br><span class="line">            x.<span class="built_in">clear</span>(),y.<span class="built_in">clear</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(matrix[j][i]==<span class="number">-1</span>) x.<span class="built_in">push_back</span>(j),y.<span class="built_in">push_back</span>(i);</span><br><span class="line">                <span class="keyword">else</span> t=<span class="built_in">max</span>(t,matrix[j][i]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;x.<span class="built_in">size</span>();k++)&#123;</span><br><span class="line">                matrix[x[k]][y[k]]=t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> matrix;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><br></br></p>
 <h1 id="3034-匹配模式数组的子数组数目-I-中等"><a href="#3034-匹配模式数组的子数组数目-I-中等" class="headerlink" title="3034. 匹配模式数组的子数组数目 I 中等"></a>3034. 匹配模式数组的子数组数目 I <font color='#ffbd00' size=2>中等</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-subarrays-that-match-a-pattern-i/description/">3034. 匹配模式数组的子数组数目 I</a></p>
 <p><strong>分析：</strong><br>根据 <strong>nums</strong> 中各个元素的值，计算得到其对应的 <strong>匹配模式数组 nums_pattern</strong>。<br>再在 <strong>nums_pattern</strong> 中寻找子数组 <strong>pattern</strong> 的数量。</p>
 <p><strong>代码：</strong></p>
-<pre><code class="cpp">class Solution &#123;
-public:
-    int countMatchingSubarrays(vector&lt;int&gt;&amp; nums, vector&lt;int&gt;&amp; pattern) &#123;
-        int n=nums.size(), m=pattern.size(), ans=0;
-        vector&lt;int&gt; cnt;
-        for(int i=1;i&lt;n;i++)&#123;
-            if(nums[i]&gt;nums[i-1]) cnt.push_back(1);
-            else if(nums[i]==nums[i-1]) cnt.push_back(0);
-            else cnt.push_back(-1);
-        &#125;
-        for(int i=0;i&lt;cnt.size()-m+1;i++)&#123;
-            for(int j=0;j&lt;m;j++)&#123;
-                if(cnt[i+j]!=pattern[j]) break;
-                if(j==m-1) ans++;
-            &#125;
-        &#125;
-        return ans;
-    &#125;
-&#125;;
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countMatchingSubarrays</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, vector&lt;<span class="type">int</span>&gt;&amp; pattern)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>(), m=pattern.<span class="built_in">size</span>(), ans=<span class="number">0</span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; cnt;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&gt;nums[i<span class="number">-1</span>]) cnt.<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums[i]==nums[i<span class="number">-1</span>]) cnt.<span class="built_in">push_back</span>(<span class="number">0</span>);</span><br><span class="line">            <span class="keyword">else</span> cnt.<span class="built_in">push_back</span>(<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;cnt.<span class="built_in">size</span>()-m+<span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(cnt[i+j]!=pattern[j]) <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">if</span>(j==m<span class="number">-1</span>) ans++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><br></br></p>
 <h1 id="3035-回文字符串的最大数量-中等"><a href="#3035-回文字符串的最大数量-中等" class="headerlink" title="3035. 回文字符串的最大数量 中等"></a>3035. 回文字符串的最大数量 <font color='#ffbd00' size=2>中等</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-palindromes-after-operations/description/">3035. 回文字符串的最大数量</a></p>
 <p><strong>分析：</strong><br>题目求的是最终为回文字符串的数量，并非最小的交换次数，因此转换思维直接 <strong>构造</strong> 回文字符串。</p>
@@ -184,115 +151,21 @@ public:
 <li>对于 <strong>能直接使用偶数字符对填充完毕</strong>，或者 <strong>剩一个字符的字符串</strong>，最终都能构成回文字符串，此时数量 +1。最终即为回文字符串的最大数量。</li>
 </ul>
 <p><strong>代码：</strong></p>
-<pre><code class="cpp">class Solution &#123;
-public:
-    int findOdd(int cnt[])&#123;
-        int ans=-1;
-        for(int i=0;i&lt;26;i++)&#123;
-            if(cnt[i]%2==1) return i;
-            else if(cnt[i]&gt;0) ans=i;
-        &#125;
-        return ans;
-    &#125;
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findOdd</span><span class="params">(<span class="type">int</span> cnt[])</span></span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cnt[i]%<span class="number">2</span>==<span class="number">1</span>) <span class="keyword">return</span> i;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(cnt[i]&gt;<span class="number">0</span>) ans=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxPalindromesAfterOperations</span><span class="params">(vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> cnt[<span class="number">26</span>], ans=<span class="number">0</span>;<span class="built_in">memset</span>(cnt, <span class="number">0</span>, <span class="built_in">sizeof</span>(cnt));</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; t;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> word : words)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> i : word)&#123;</span><br><span class="line">                cnt[i - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">            &#125;</span><br><span class="line">            t.<span class="built_in">push_back</span>(word.<span class="built_in">length</span>());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(t.<span class="built_in">begin</span>(), t.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i : t)&#123;</span><br><span class="line">            <span class="type">int</span> tmp = i;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;<span class="number">26</span>&amp;&amp;tmp&gt;<span class="number">1</span>;j++)&#123;</span><br><span class="line">                <span class="type">int</span> tt = tmp/<span class="number">2</span>,tc = cnt[j]/<span class="number">2</span>;</span><br><span class="line">                <span class="keyword">if</span>(tt*<span class="number">2</span>&lt;=cnt[j])&#123;</span><br><span class="line">                    tmp-=tt*<span class="number">2</span>;</span><br><span class="line">                    cnt[j]-=tt*<span class="number">2</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    tmp-=tc*<span class="number">2</span>;</span><br><span class="line">                    cnt[j]-=tc*<span class="number">2</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(tmp==<span class="number">0</span>)&#123;ans++;<span class="keyword">continue</span>;&#125;</span><br><span class="line">            <span class="keyword">if</span>(tmp==<span class="number">1</span>)&#123;</span><br><span class="line">                cnt[<span class="built_in">findOdd</span>(cnt)]--;ans++;&#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="type">int</span> j=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">while</span>(tmp)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(cnt[j]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                        <span class="keyword">if</span>(cnt[j]&gt;=tmp) cnt[j]-=tmp,tmp=<span class="number">0</span>;</span><br><span class="line">                        <span class="keyword">else</span> tmp-=cnt[j],cnt[j]=<span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    j++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-    int maxPalindromesAfterOperations(vector&lt;string&gt;&amp; words) &#123;
-        int cnt[26], ans=0;memset(cnt, 0, sizeof(cnt));
-        vector&lt;int&gt; t;
-        for(auto word : words)&#123;
-            for(auto i : word)&#123;
-                cnt[i - &#39;a&#39;]++;
-            &#125;
-            t.push_back(word.length());
-        &#125;
-        sort(t.begin(), t.end());
-        for(int i : t)&#123;
-            int tmp = i;
-            for(int j=0;j&lt;26&amp;&amp;tmp&gt;1;j++)&#123;
-                int tt = tmp/2,tc = cnt[j]/2;
-                if(tt*2&lt;=cnt[j])&#123;
-                    tmp-=tt*2;
-                    cnt[j]-=tt*2;
-                &#125;else&#123;
-                    tmp-=tc*2;
-                    cnt[j]-=tc*2;
-                &#125;
-            &#125;
-            if(tmp==0)&#123;ans++;continue;&#125;
-            if(tmp==1)&#123;
-                cnt[findOdd(cnt)]--;ans++;&#125;
-            else&#123;
-                int j=0;
-                while(tmp)&#123;
-                    if(cnt[j]&gt;0)&#123;
-                        if(cnt[j]&gt;=tmp) cnt[j]-=tmp,tmp=0;
-                        else tmp-=cnt[j],cnt[j]=0;
-                    &#125;
-                    j++;
-                &#125;
-            &#125;
-        &#125;
-        return ans;
-    &#125;
-&#125;;
-</code></pre>
 <p><strong>更加巧妙方法</strong>：利用位运算。</p>
-<pre><code class="cpp">class Solution &#123;
-public:
-    int maxPalindromesAfterOperations(vector&lt;string&gt;&amp; words) &#123;
-        int ans = 0, tot = 0, mask = 0;
-        for (auto &amp;w : words) &#123;
-            tot += w.length();
-            for (char c : w) &#123;
-                mask ^= 1 &lt;&lt; (c - &#39;a&#39;); // 对于出现奇数次的字符，对应位为1，否则为0
-            &#125;
-        &#125;
-        tot -= __builtin_popcount(mask); // 减去无法构成相同字符对的字符（单个的字符）
-        cout&lt;&lt;tot&lt;&lt;endl;
-        ranges::sort(words, [](const auto &amp;a, const auto &amp;b) &#123;
-            return a.length() &lt; b.length();
-        &#125;);
-        for (auto &amp;w : words) &#123;
-            tot -= w.length() / 2 * 2; // 长度为奇数的字符串，不考虑中间的单个字符
-            if (tot &lt; 0) break; // 如果相同字符对无法构建剩下的回文字符串，则跳出循环，此即为回文字符串的最大数量
-            ans++;
-        &#125;
-        return ans;
-    &#125;
-&#125;;
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxPalindromesAfterOperations</span><span class="params">(vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>, tot = <span class="number">0</span>, mask = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;w : words) &#123;</span><br><span class="line">            tot += w.<span class="built_in">length</span>();</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">char</span> c : w) &#123;</span><br><span class="line">                mask ^= <span class="number">1</span> &lt;&lt; (c - <span class="string">&#x27;a&#x27;</span>); <span class="comment">// 对于出现奇数次的字符，对应位为1，否则为0</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        tot -= __builtin_popcount(mask); <span class="comment">// 减去无法构成相同字符对的字符（单个的字符）</span></span><br><span class="line">        cout&lt;&lt;tot&lt;&lt;endl;</span><br><span class="line">        ranges::<span class="built_in">sort</span>(words, [](<span class="type">const</span> <span class="keyword">auto</span> &amp;a, <span class="type">const</span> <span class="keyword">auto</span> &amp;b) &#123;</span><br><span class="line">            <span class="keyword">return</span> a.<span class="built_in">length</span>() &lt; b.<span class="built_in">length</span>();</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;w : words) &#123;</span><br><span class="line">            tot -= w.<span class="built_in">length</span>() / <span class="number">2</span> * <span class="number">2</span>; <span class="comment">// 长度为奇数的字符串，不考虑中间的单个字符</span></span><br><span class="line">            <span class="keyword">if</span> (tot &lt; <span class="number">0</span>) <span class="keyword">break</span>; <span class="comment">// 如果相同字符对无法构建剩下的回文字符串，则跳出循环，此即为回文字符串的最大数量</span></span><br><span class="line">            ans++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p><br></br></p>
 <h1 id="3036-匹配模式数组的子数组数目-II-困难"><a href="#3036-匹配模式数组的子数组数目-II-困难" class="headerlink" title="3036. 匹配模式数组的子数组数目 II 困难"></a>3036. 匹配模式数组的子数组数目 II <font color='#ff0044' size=2>困难</font></h1><p><strong>原题地址：</strong><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-subarrays-that-match-a-pattern-ii/">3036. 匹配模式数组的子数组数目 II</a></p>
 <p><strong>分析：</strong><br>根据 nums 中各个元素的值，计算得到其对应的 <strong>匹配模式数组 nums_pattern</strong>。<br>再在 <strong>nums_pattern</strong> 中寻找子数组 <strong>pattern</strong> 的数量，即数组的模式匹配，可以利用 <strong>KMP算法</strong> 解决。</p>
 <p><strong>代码：</strong></p>
-<pre><code class="cpp">class Solution &#123;
-public:
-    int countMatchingSubarrays(vector&lt;int&gt;&amp; nums, vector&lt;int&gt;&amp; pattern) &#123;
-        int n=nums.size(), m=pattern.size(), ans=0;
-        vector&lt;int&gt; cnt, ne(m);
-        for(int i=1;i&lt;n;i++)&#123;
-            if(nums[i]&gt;nums[i-1]) cnt.push_back(1);
-            else if(nums[i]==nums[i-1]) cnt.push_back(0);
-            else cnt.push_back(-1);
-        &#125;
-        ne[0]=-1;
-        for(int i=1,j=-1;i&lt;m;i++)&#123;
-            while(j!=-1&amp;&amp;pattern[i]!=pattern[j+1]) j=ne[j];
-            if(pattern[i]==pattern[j+1]) j++;
-            ne[i]=j;
-        &#125;
-        for(int i=0,j=-1;i&lt;n-1;i++)&#123;
-            while(j!=-1&amp;&amp;cnt[i]!=pattern[j+1]) j=ne[j];
-            if(cnt[i]==pattern[j+1]) j++;
-            if(j==m-1)&#123;
-                ans++;
-                j=ne[j];
-            &#125;
-        &#125;
-        return ans;
-    &#125;
-&#125;;
-</code></pre>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countMatchingSubarrays</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, vector&lt;<span class="type">int</span>&gt;&amp; pattern)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>(), m=pattern.<span class="built_in">size</span>(), ans=<span class="number">0</span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; cnt, <span class="built_in">ne</span>(m);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&gt;nums[i<span class="number">-1</span>]) cnt.<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums[i]==nums[i<span class="number">-1</span>]) cnt.<span class="built_in">push_back</span>(<span class="number">0</span>);</span><br><span class="line">            <span class="keyword">else</span> cnt.<span class="built_in">push_back</span>(<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        ne[<span class="number">0</span>]=<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>,j=<span class="number">-1</span>;i&lt;m;i++)&#123;</span><br><span class="line">            <span class="keyword">while</span>(j!=<span class="number">-1</span>&amp;&amp;pattern[i]!=pattern[j+<span class="number">1</span>]) j=ne[j];</span><br><span class="line">            <span class="keyword">if</span>(pattern[i]==pattern[j+<span class="number">1</span>]) j++;</span><br><span class="line">            ne[i]=j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>,j=<span class="number">-1</span>;i&lt;n<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">while</span>(j!=<span class="number">-1</span>&amp;&amp;cnt[i]!=pattern[j+<span class="number">1</span>]) j=ne[j];</span><br><span class="line">            <span class="keyword">if</span>(cnt[i]==pattern[j+<span class="number">1</span>]) j++;</span><br><span class="line">            <span class="keyword">if</span>(j==m<span class="number">-1</span>)&#123;</span><br><span class="line">                ans++;</span><br><span class="line">                j=ne[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
     </div>
 
     <div class="post-meta">
@@ -384,15 +257,15 @@ public:
 
     
 
-    
 
 
 
-<script>
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-</script>
 
+
+
+<script src="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js
+"></script>
 
 
                 </div>
