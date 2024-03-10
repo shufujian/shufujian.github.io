@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="LeetCode第388场周赛" />
+    <meta name="hexo-theme-A4" content="v1.8.4" />
+    <link rel="alternate icon" type="image/webp" href="/img/sf_1.jpg">
+    <title>ShuFuJia</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+    <link href="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css
+" rel="stylesheet">
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+    
+    
+    <body>
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/sf_1.jpg" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">ShuFuJia</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            LeetCode第388场周赛
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#100233-%E9%87%8D%E6%96%B0%E5%88%86%E8%A3%85%E8%8B%B9%E6%9E%9C-%E7%AE%80%E5%8D%95"><span class="post-toc-text">100233. 重新分装苹果 简单</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#100247-%E5%B9%B8%E7%A6%8F%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E9%80%89%E6%8B%A9%E6%96%B9%E6%A1%88-%E4%B8%AD%E7%AD%89"><span class="post-toc-text">100247. 幸福值最大化的选择方案 中等</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#100251-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E7%9F%AD%E9%9D%9E%E5%85%AC%E5%85%B1%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2-%E4%B8%AD%E7%AD%89"><span class="post-toc-text">100251. 数组中的最短非公共子字符串 中等</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#100216-K-%E4%B8%AA%E4%B8%8D%E7%9B%B8%E4%BA%A4%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E8%83%BD%E9%87%8F%E5%80%BC-%E5%9B%B0%E9%9A%BE"><span class="post-toc-text">100216. K 个不相交子数组的最大能量值 困难</span></a></li></ol>
+            
+        
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="100233-重新分装苹果-简单"><a href="#100233-重新分装苹果-简单" class="headerlink" title="100233. 重新分装苹果 简单"></a>100233. 重新分装苹果 <font color='#00baa4' size=2>简单</font></h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/apple-redistribution-into-boxes/">100233. 重新分装苹果</a></p>
+<p><strong>分析：</strong><br>排序+贪心</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minimumBoxes</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; apple, vector&lt;<span class="type">int</span>&gt;&amp; capacity)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> cnt = <span class="built_in">accumulate</span>(apple.<span class="built_in">begin</span>(), apple.<span class="built_in">end</span>(), <span class="number">0</span>);</span><br><span class="line">        <span class="built_in">sort</span>(capacity.<span class="built_in">begin</span>(), capacity.<span class="built_in">end</span>());</span><br><span class="line">        <span class="type">int</span> i=capacity.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(;i&gt;=<span class="number">0</span>&amp;&amp;cnt&gt;<span class="number">0</span>;i--)&#123;</span><br><span class="line">            cnt-=capacity[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> capacity.<span class="built_in">size</span>()-i<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><br></br></p>
+<h1 id="100247-幸福值最大化的选择方案-中等"><a href="#100247-幸福值最大化的选择方案-中等" class="headerlink" title="100247. 幸福值最大化的选择方案 中等"></a>100247. 幸福值最大化的选择方案 <font color='#ffbd00' size=2>中等</font></h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximize-happiness-of-selected-children/description/">100247. 幸福值最大化的选择方案</a></p>
+<p><strong>分析：</strong><br>排序+贪心。<br>每次选择当前幸福值最大的孩子，其余孩子幸福值均减小1，直至减小至0。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">maximumHappinessSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; happiness, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">sort</span>(happiness.<span class="built_in">begin</span>(), happiness.<span class="built_in">end</span>());</span><br><span class="line">        <span class="type">int</span> i=happiness.<span class="built_in">size</span>()<span class="number">-1</span>,cnt=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(k--)&#123;</span><br><span class="line">            ans+=(<span class="number">1LL</span>*(<span class="built_in">max</span>(happiness[i]-cnt,<span class="number">0</span>)));</span><br><span class="line">            cnt++;i--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><br></br></p>
+<h1 id="100251-数组中的最短非公共子字符串-中等"><a href="#100251-数组中的最短非公共子字符串-中等" class="headerlink" title="100251. 数组中的最短非公共子字符串 中等"></a>100251. 数组中的最短非公共子字符串 <font color='#ffbd00' size=2>中等</font></h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/shortest-uncommon-substring-in-an-array/description/">100251. 数组中的最短非公共子字符串</a></p>
+<p><strong>分析：</strong></p>
+<p><strong>代码：</strong><br>利用<code>map</code>实现哈希表，后续需要学习<strong>字符串哈希</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">shortestSubstrings</span><span class="params">(vector&lt;string&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;string, <span class="type">int</span>&gt; m,mine;</span><br><span class="line">        vector&lt;string&gt; ans;</span><br><span class="line">        <span class="type">int</span> n=arr.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="type">int</span> l=arr[i].<span class="built_in">length</span>();</span><br><span class="line">            mine.<span class="built_in">clear</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=l;j++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k+j<span class="number">-1</span>&lt;l;k++)&#123;</span><br><span class="line">                    string s= arr[i].<span class="built_in">substr</span>(k,j);</span><br><span class="line">                    <span class="keyword">if</span>(mine[s]==<span class="number">0</span>)&#123; <span class="comment">// 同一个字符串中的字符只计算一次</span></span><br><span class="line">                        m[s]++;</span><br><span class="line">                        mine[s]++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="type">int</span> l=arr[i].<span class="built_in">length</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=l;j++)&#123;</span><br><span class="line">                vector&lt;string&gt; a;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k+j<span class="number">-1</span>&lt;l;k++)&#123;</span><br><span class="line">                    string s = arr[i].<span class="built_in">substr</span>(k, j);</span><br><span class="line">                    <span class="keyword">if</span>(m[s]==<span class="number">1</span>)&#123;</span><br><span class="line">                        a.<span class="built_in">push_back</span>(s);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(a.<span class="built_in">size</span>()&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="built_in">sort</span>(a.<span class="built_in">begin</span>(),a.<span class="built_in">end</span>());</span><br><span class="line">                    ans.<span class="built_in">push_back</span>(a[<span class="number">0</span>]);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(ans.<span class="built_in">size</span>()&gt;i) <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(ans.<span class="built_in">size</span>()&lt;=i) ans.<span class="built_in">push_back</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>利用 <code>string.find()</code>来进行优化，减小哈希表(利用map实现hash)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">shortestSubstrings</span><span class="params">(vector&lt;string&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = arr.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;string&gt; <span class="title">ans</span><span class="params">(n)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> len=<span class="number">1</span>;len&lt;=arr[i].<span class="built_in">size</span>();len++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j+len&lt;=arr[i].<span class="built_in">size</span>();j++)&#123;</span><br><span class="line">                    string s = arr[i].<span class="built_in">substr</span>(j,len);</span><br><span class="line">                    <span class="type">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;n;k++) <span class="keyword">if</span>(k!=i &amp;&amp; arr[k].<span class="built_in">find</span>(s) != string::npos) &#123;flag=<span class="literal">false</span>; <span class="keyword">break</span>;&#125;</span><br><span class="line">                    <span class="keyword">if</span>(flag &amp;&amp; (ans[i].<span class="built_in">empty</span>() || s &lt; ans[i])) ans[i]=s;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(ans[i].<span class="built_in">size</span>() &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><br></br></p>
+<h1 id="100216-K-个不相交子数组的最大能量值-困难"><a href="#100216-K-个不相交子数组的最大能量值-困难" class="headerlink" title="100216. K 个不相交子数组的最大能量值 困难"></a>100216. K 个不相交子数组的最大能量值 <font color='#ff0044' size=2>困难</font></h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/description/">100216. K 个不相交子数组的最大能量值</a></p>
+<p><strong>分析：</strong><br>前缀和+划分DP，目前还在尝试理解中。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">maximumStrength</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; <span class="title">s</span><span class="params">(n + <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            s[i + <span class="number">1</span>] = s[i] + nums[i];<span class="comment">// 前缀和</span></span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">long</span> <span class="type">long</span>&gt;&gt; <span class="built_in">f</span>(k + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="type">long</span> <span class="type">long</span>&gt;(n + <span class="number">1</span>)); <span class="comment">//dp[i][j]表示将0~j-1分成i段</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= k; i++) &#123;</span><br><span class="line">            f[i][i - <span class="number">1</span>] = LLONG_MIN;</span><br><span class="line">            <span class="type">long</span> <span class="type">long</span> mx = LLONG_MIN;</span><br><span class="line">            <span class="type">int</span> w = (k - i + <span class="number">1</span>) * (i % <span class="number">2</span> ? <span class="number">1</span> : <span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 要保证前0~j-1至少有i个元素，同时保证j~n-1至少有k-i个元素</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt;= n - k + i; j++) &#123;</span><br><span class="line">                <span class="comment">// 维护 i-1 到 当前 j-1 的最大值</span></span><br><span class="line">                <span class="comment">// 选择 nums[j-1]且为 第i个子数组的最右端元素，但第 i 个子数组有多少，需要从 i-1 开始一直到 j-1 计算 </span></span><br><span class="line">                mx = <span class="built_in">max</span>(mx, f[i - <span class="number">1</span>][j - <span class="number">1</span>] - s[j - <span class="number">1</span>] * w);</span><br><span class="line">                <span class="comment">// 选择当前值的最大值，选nums[j-1]（包含怎么选）或者不选</span></span><br><span class="line">                f[i][j] = <span class="built_in">max</span>(f[i][j - <span class="number">1</span>], s[j] * w + mx);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> f[k][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-03-10</span>
+            
+                <span>该篇文章被 ShuFuJia</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/LeetCode/'>
+                            LeetCode
+                        </a>
+                    
+                </span>
+             
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    <!-- <div class="post-footer-pre-next">
+        <span>上一篇：<a href=""></a></span>
+        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
+    </div> -->
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 2024-2024 China 
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊知之愈明，则行之愈笃；行之愈笃，则知之愈益明🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js
+"></script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+
+
+    <!--暗黑模式-->
+    <script src="/js/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+        const options = {
+            bottom: '53px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '42px', // default: 'unset'
+            time: '0.3s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+        }
+    
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+  
+</html>
