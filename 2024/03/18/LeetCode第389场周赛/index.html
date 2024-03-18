@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="LeetCode第389场周赛" />
+    <meta name="hexo-theme-A4" content="v1.8.4" />
+    <link rel="alternate icon" type="image/webp" href="/img/sf_1.jpg">
+    <title>ShuFuJia</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+    <link href="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css
+" rel="stylesheet">
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+    
+    
+    <body>
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/sf_1.jpg" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">ShuFuJia</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            LeetCode第389场周赛
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3083-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8A%E5%85%B6%E5%8F%8D%E8%BD%AC%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E5%90%8C%E4%B8%80%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2-%E7%AE%80%E5%8D%95"><span class="post-toc-text">3083. 字符串及其反转中是否存在同一子字符串 简单</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3084-%E7%BB%9F%E8%AE%A1%E4%BB%A5%E7%BB%99%E5%AE%9A%E5%AD%97%E7%AC%A6%E5%BC%80%E5%A4%B4%E5%92%8C%E7%BB%93%E5%B0%BE%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%80%BB%E6%95%B0-%E4%B8%AD%E7%AD%89"><span class="post-toc-text">3084. 统计以给定字符开头和结尾的子字符串总数 中等</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3085-%E6%88%90%E4%B8%BA-K-%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%9C%80%E8%A6%81%E5%88%A0%E9%99%A4%E7%9A%84%E6%9C%80%E5%B0%91%E5%AD%97%E7%AC%A6%E6%95%B0-%E4%B8%AD%E7%AD%89"><span class="post-toc-text">3085. 成为 K 特殊字符串需要删除的最少字符数 中等</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3086-%E6%8B%BE%E8%B5%B7-K-%E4%B8%AA-1-%E9%9C%80%E8%A6%81%E7%9A%84%E6%9C%80%E5%B0%91%E8%A1%8C%E5%8A%A8%E6%AC%A1%E6%95%B0-%E5%9B%B0%E9%9A%BE"><span class="post-toc-text">3086. 拾起 K 个 1 需要的最少行动次数 困难</span></a></li></ol>
+            
+        
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="3083-字符串及其反转中是否存在同一子字符串-简单"><a href="#3083-字符串及其反转中是否存在同一子字符串-简单" class="headerlink" title="3083. 字符串及其反转中是否存在同一子字符串 简单"></a>3083. 字符串及其反转中是否存在同一子字符串 <font color='#00baa4' size=2>简单</font></h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/existence-of-a-substring-in-a-string-and-its-reverse/description/">3083. 字符串及其反转中是否存在同一子字符串</a></p>
+<p><strong>分析：</strong><br>易得：当存在 <strong>长度≥2</strong> 的反转子字符串时，一定会有 <strong>长度&#x3D;2</strong> 的反转子字符串，因此只需要判断长度为2的子字符串即可。</p>
+<p><strong>法一</strong>：直接判断。<br><strong>法二</strong>：哈希表。</p>
+<p><strong>代码：</strong></p>
+<p>直接判断：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isSubstringPresent</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=s.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            string str = s.<span class="built_in">substr</span>(i,<span class="number">2</span>);<span class="built_in">reverse</span>(str.<span class="built_in">begin</span>(), str.<span class="built_in">end</span>());</span><br><span class="line">            <span class="keyword">if</span>(s.<span class="built_in">find</span>(str)!=string::npos) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isSubstringPresent</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(s)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n-<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> s[i:i+<span class="number">2</span>] <span class="keyword">in</span> s[::-<span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<p>哈希表：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isSubstringPresent</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = s.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; <span class="title">vis</span><span class="params">(<span class="number">26</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="type">int</span> x = s[i<span class="number">-1</span>]-<span class="string">&#x27;a&#x27;</span>, y = s[i]-<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            vis[x] |= <span class="number">1</span>&lt;&lt;y;<span class="comment">// 数字中二进制位 0~25 为分别表示26个字母，对二进制位为 1，则表示 x 代表字母之后出现了该字母</span></span><br><span class="line">            <span class="keyword">if</span>(vis[y] &gt;&gt; x &amp; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isSubstringPresent</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        vis = [<span class="number">0</span>] * <span class="number">26</span></span><br><span class="line">        <span class="keyword">for</span> x, y <span class="keyword">in</span> pairwise(<span class="built_in">map</span>(<span class="built_in">ord</span>, s)):</span><br><span class="line">            x -= <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">            y -= <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">            vis[x] |= <span class="number">1</span>&lt;&lt;y</span><br><span class="line">            <span class="keyword">if</span> vis[y] &gt;&gt; x&amp;<span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<p><br></br></p>
+<h1 id="3084-统计以给定字符开头和结尾的子字符串总数-中等"><a href="#3084-统计以给定字符开头和结尾的子字符串总数-中等" class="headerlink" title="3084. 统计以给定字符开头和结尾的子字符串总数 中等"></a>3084. 统计以给定字符开头和结尾的子字符串总数 <font color='#ffbd00' size=2>中等</font></h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-substrings-starting-and-ending-with-given-character/description/">3084. 统计以给定字符开头和结尾的子字符串总数</a></p>
+<p><strong>分析：</strong><br>统计给定字符在字符串中出现的次数 <strong>cnt</strong>。<br>以该字符串开头和结尾的子字符串，即任意选择两个该字符组成的子字符串的个数。$C^{cnt}_{2}$</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">countSubstrings</span><span class="params">(string s, <span class="type">char</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=s.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> ans=<span class="number">0</span>,cnt=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]==c)&#123;</span><br><span class="line">                ans+=cnt;</span><br><span class="line">                cnt++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans+cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">countSubstrings</span><span class="params">(string s, <span class="type">char</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; t : s) <span class="keyword">if</span>(t == c) cnt++;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1LL</span>*(<span class="number">1</span>+cnt)*cnt/<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">countSubstrings</span>(<span class="params">self, s: <span class="built_in">str</span>, c: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        cnt = s.count(c)</span><br><span class="line">        <span class="keyword">return</span> (cnt+<span class="number">1</span>)*cnt//<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p><br></br></p>
+<h1 id="3085-成为-K-特殊字符串需要删除的最少字符数-中等"><a href="#3085-成为-K-特殊字符串需要删除的最少字符数-中等" class="headerlink" title="3085. 成为 K 特殊字符串需要删除的最少字符数 中等"></a>3085. 成为 K 特殊字符串需要删除的最少字符数 <font color='#ffbd00' size=2>中等</font></h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-deletions-to-make-string-k-special/description/">3085. 成为 K 特殊字符串需要删除的最少字符数</a></p>
+<p><strong>分析：</strong><br>需要得到最少删除字符数，我们反向思考，构造字符串。因为要得到最少的删除数，出现次数最少的字符，要么完全删除，要么完全保留。如果删除一部分，那么出现次数过多的也要一起删除，则不会是最少字符数。<br>枚举最少的字符的数量，再不断枚举其余字符的数量，构建 <strong>K特殊字符串</strong>，取最长的构造的字符串，结果即为原字符串长度 - 最长的构造的字符串的长度。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minimumDeletions</span><span class="params">(string word, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">cnt</span><span class="params">(<span class="number">26</span>,<span class="number">0</span>)</span>,t</span>;</span><br><span class="line">        <span class="type">int</span> n=word.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++) cnt[word[i]-<span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++) <span class="keyword">if</span>(cnt[i]&gt;<span class="number">0</span>) t.<span class="built_in">push_back</span>(cnt[i]);</span><br><span class="line">        <span class="built_in">sort</span>(t.<span class="built_in">begin</span>(),t.<span class="built_in">end</span>());</span><br><span class="line">        <span class="type">int</span> all = <span class="built_in">accumulate</span>(t.<span class="built_in">begin</span>(), t.<span class="built_in">end</span>(), <span class="number">0</span>),ans=all;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;t.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="type">int</span> c=t[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>;j&lt;t.<span class="built_in">size</span>();j++)&#123;</span><br><span class="line">                c+=<span class="built_in">min</span>(t[i]+k,t[j]);</span><br><span class="line">            &#125;</span><br><span class="line">            ans=<span class="built_in">min</span>(ans, all-c);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minimumDeletions</span>(<span class="params">self, word: <span class="built_in">str</span>, k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        cnt,ans = [<span class="number">0</span>]*<span class="number">26</span>,<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> word:</span><br><span class="line">            cnt[<span class="built_in">ord</span>(i) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)]+=<span class="number">1</span></span><br><span class="line">        cnt = <span class="built_in">sorted</span>(cnt)</span><br><span class="line">        <span class="keyword">for</span> i,x <span class="keyword">in</span> <span class="built_in">enumerate</span>(cnt):</span><br><span class="line">            <span class="keyword">if</span> x == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            c = x</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> cnt[i+<span class="number">1</span>:]:</span><br><span class="line">                c+=<span class="built_in">min</span>(x+k,j)</span><br><span class="line">            ans = <span class="built_in">max</span>(ans,c)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">sum</span>(cnt) - ans</span><br></pre></td></tr></table></figure>
+
+<p><br></br></p>
+<h1 id="3086-拾起-K-个-1-需要的最少行动次数-困难"><a href="#3086-拾起-K-个-1-需要的最少行动次数-困难" class="headerlink" title="3086. 拾起 K 个 1 需要的最少行动次数 困难"></a>3086. 拾起 K 个 1 需要的最少行动次数 <font color='#ff0044' size=2>困难</font></h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-moves-to-pick-k-ones/description/">3086. 拾起 K 个 1 需要的最少行动次数</a></p>
+<p><strong>分析：</strong><br>对于获取转换后的1，至少需要两次操作(方法一+方法二)<br>对于获取原本就存在的1，则需要看对应下标与 $index$。</p>
+<blockquote>
+<p><strong>注意</strong>：并非获取转换后的 1 操作数更少，设原本存在的 1 的下标为x</p>
+<ul>
+<li>当 $x&#x3D;&#x3D;index$ ，不需要操作。</li>
+<li>当 $|x - index| &#x3D;&#x3D; 1$，仅需要一个操作。</li>
+</ul>
+</blockquote>
+<p>因此在统计时，查看是否存在连续2或者3个 1 出现，同时再看是否能通过生成 1 来获取，否则只能一点一点移动。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">minimumMoves</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k, <span class="type">int</span> maxChanges)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> c=<span class="number">0</span>, n=nums.<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; point;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==<span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">            point.<span class="built_in">push_back</span>(i);</span><br><span class="line">            c=<span class="built_in">max</span>(c,<span class="number">1</span>);<span class="comment">// 至少有一个连续的 1</span></span><br><span class="line">            <span class="keyword">if</span>(i&gt;<span class="number">0</span> &amp;&amp; nums[i<span class="number">-1</span>]==<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i&gt;<span class="number">1</span> &amp;&amp; nums[i<span class="number">-2</span>]==<span class="number">1</span>)&#123;</span><br><span class="line">                    c=<span class="number">3</span>; <span class="comment">// 有三个连续的 1</span></span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    c=<span class="built_in">max</span>(c,<span class="number">2</span>); <span class="comment">// 至少有两个连续的 1</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        c=<span class="built_in">min</span>(c,k); <span class="comment">// 判断 c 是否满足 k，如果 c&gt;k，那么就不需要这么多连续的 1。</span></span><br><span class="line">        <span class="keyword">if</span>(maxChanges &gt;= k-c)&#123; <span class="comment">// 在取完连续 1，后，变化操作是否满足</span></span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">max</span>(c<span class="number">-1</span>,<span class="number">0</span>) + (k-c)*<span class="number">2</span>; <span class="comment">// 满足的话 直接返回操作次数</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> m=point.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; <span class="title">sum</span><span class="params">(m+<span class="number">1</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">            sum[i+<span class="number">1</span>] = sum[i] + <span class="number">1LL</span>*point[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> size = k-maxChanges; <span class="comment">// 还剩下多少需要一个一个移位</span></span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> ans = LLONG_MAX;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> r = size;r&lt;=m;r++)&#123;</span><br><span class="line">            <span class="type">int</span> l = r-size, i=l+size/<span class="number">2</span>;</span><br><span class="line">            <span class="type">long</span> <span class="type">long</span> index = point[i];</span><br><span class="line">            <span class="type">long</span> <span class="type">long</span> s1 = index * (i-l) - (sum[i] - sum[l]); <span class="comment">// 将中位数 i 左边的所有 1 移位到 index 所需的操作数</span></span><br><span class="line">            <span class="type">long</span> <span class="type">long</span> s2 = sum[r] - sum[i]-index*(r-i); <span class="comment">// 将中位数 i 右边的所有 1 移位到 index 所需的操作数</span></span><br><span class="line">            ans = <span class="built_in">min</span>(ans, s1+s2);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans + maxChanges*<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minimumMoves</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span>, maxChanges: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        pos = []</span><br><span class="line">        n,c = <span class="built_in">len</span>(nums),<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i,n <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            <span class="keyword">if</span> n==<span class="number">0</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            c=<span class="built_in">max</span>(c,<span class="number">1</span>)</span><br><span class="line">            pos.append(i)</span><br><span class="line">            <span class="keyword">if</span> i&gt;<span class="number">0</span> <span class="keyword">and</span> nums[i-<span class="number">1</span>]==<span class="number">1</span>:</span><br><span class="line">                <span class="keyword">if</span> i&gt;<span class="number">1</span> <span class="keyword">and</span> nums[i-<span class="number">2</span>]==<span class="number">1</span>:</span><br><span class="line">                    c=<span class="number">3</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    c=<span class="built_in">max</span>(c,<span class="number">2</span>)</span><br><span class="line">        c=<span class="built_in">min</span>(c,k)</span><br><span class="line">        <span class="keyword">if</span> maxChanges&gt;=k-c:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">max</span>(c-<span class="number">1</span>,<span class="number">0</span>) + (k-c)*<span class="number">2</span></span><br><span class="line">        n,ans = <span class="built_in">len</span>(pos), inf</span><br><span class="line">        pre_sum = <span class="built_in">list</span>(accumulate(pos, initial=<span class="number">0</span>))</span><br><span class="line">        s = k - maxChanges</span><br><span class="line">        <span class="keyword">for</span> r <span class="keyword">in</span> <span class="built_in">range</span>(s, n+<span class="number">1</span>):</span><br><span class="line">            l = r - s</span><br><span class="line">            i = l + s//<span class="number">2</span></span><br><span class="line">            index = pos[i]</span><br><span class="line">            s1 = (index * (i-l)) - (pre_sum[i] - pre_sum[l]) </span><br><span class="line">            s2 = (pre_sum[r] - pre_sum[i]) - index * (r-i)</span><br><span class="line">            ans = <span class="built_in">min</span>(ans , s1+s2)</span><br><span class="line">        <span class="keyword">return</span> ans + maxChanges*<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+</div><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-03-18</span>
+            
+                <span>该篇文章被 ShuFuJia</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/LeetCode/'>
+                            LeetCode
+                        </a>
+                    
+                </span>
+             
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    <!-- <div class="post-footer-pre-next">
+        <span>上一篇：<a href=""></a></span>
+        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
+    </div> -->
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 2024-2024 China 
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊知之愈明，则行之愈笃；行之愈笃，则知之愈益明🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js
+"></script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+
+
+    <!--暗黑模式-->
+    <script src="/js/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+        const options = {
+            bottom: '53px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '42px', // default: 'unset'
+            time: '0.3s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+        }
+    
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+  
+</html>
