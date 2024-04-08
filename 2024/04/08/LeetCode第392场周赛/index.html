@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="LeetCode第392场周赛" />
+    <meta name="hexo-theme-A4" content="v1.8.4" />
+    <link rel="alternate icon" type="image/webp" href="/img/sf_1.jpg">
+    <title>ShuFuJia</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+    <link href="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css
+" rel="stylesheet">
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+    
+    
+    <body>
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/sf_1.jpg" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">ShuFuJia</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            LeetCode第392场周赛
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3105-%E6%9C%80%E9%95%BF%E7%9A%84%E4%B8%A5%E6%A0%BC%E9%80%92%E5%A2%9E%E6%88%96%E9%80%92%E5%87%8F%E5%AD%90%E6%95%B0%E7%BB%84-%E7%AE%80%E5%8D%95"><span class="post-toc-text">3105. 最长的严格递增或递减子数组 简单</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3106-%E6%BB%A1%E8%B6%B3%E8%B7%9D%E7%A6%BB%E7%BA%A6%E6%9D%9F%E4%B8%94%E5%AD%97%E5%85%B8%E5%BA%8F%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2-%E4%B8%AD%E7%AD%89"><span class="post-toc-text">3106. 满足距离约束且字典序最小的字符串 中等</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3107-%E4%BD%BF%E6%95%B0%E7%BB%84%E4%B8%AD%E4%BD%8D%E6%95%B0%E7%AD%89%E4%BA%8E-K-%E7%9A%84%E6%9C%80%E5%B0%91%E6%93%8D%E4%BD%9C%E6%95%B0-%E4%B8%AD%E7%AD%89"><span class="post-toc-text">3107. 使数组中位数等于 K 的最少操作数 中等</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3108-%E5%B8%A6%E6%9D%83%E5%9B%BE%E9%87%8C%E6%97%85%E9%80%94%E7%9A%84%E6%9C%80%E5%B0%8F%E4%BB%A3%E4%BB%B7-%E5%9B%B0%E9%9A%BE"><span class="post-toc-text">3108. 带权图里旅途的最小代价 困难</span></a></li></ol>
+            
+        
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="3105-最长的严格递增或递减子数组-简单"><a href="#3105-最长的严格递增或递减子数组-简单" class="headerlink" title="3105. 最长的严格递增或递减子数组 简单"></a>3105. 最长的严格递增或递减子数组 <font color='#00baa4' size=2>简单</font></h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-strictly-increasing-or-strictly-decreasing-subarray/description/">3105. 最长的严格递增或递减子数组</a></p>
+<p><strong>分析：</strong><br>数据量小，根据题意进行暴力枚举即可。</p>
+<p><strong>代码：</strong></p>
+<p><strong>CPP：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">longestMonotonicSubarray</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>(), ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="type">int</span> lema = i<span class="number">-1</span>, lemi = i<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">while</span>(lema &gt;=<span class="number">0</span> &amp;&amp; nums[lema] &lt; nums[lema + <span class="number">1</span>] ) lema--;</span><br><span class="line">            <span class="keyword">while</span>(lemi &gt;=<span class="number">0</span> &amp;&amp; nums[lemi] &gt; nums[lemi + <span class="number">1</span>] ) lemi--;</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, <span class="built_in">max</span>(i-lema, i-lemi));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">longestMonotonicSubarray</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        n, ans = <span class="built_in">len</span>(nums), <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i, x <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            lema, lemi = i - <span class="number">1</span>, i - <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> lema &gt;= <span class="number">0</span> <span class="keyword">and</span> nums[lema] &lt; nums[lema + <span class="number">1</span>]:</span><br><span class="line">                lema -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> lemi &gt;= <span class="number">0</span> <span class="keyword">and</span> nums[lemi] &gt; nums[lemi + <span class="number">1</span>]:</span><br><span class="line">                lemi -= <span class="number">1</span></span><br><span class="line">            ans = <span class="built_in">max</span>( i - lema, i - lemi, ans )</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+
+<p><br></br></p>
+<h1 id="3106-满足距离约束且字典序最小的字符串-中等"><a href="#3106-满足距离约束且字典序最小的字符串-中等" class="headerlink" title="3106. 满足距离约束且字典序最小的字符串 中等"></a>3106. 满足距离约束且字典序最小的字符串 <font color='#ffbd00' size=2>中等</font></h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lexicographically-smallest-string-after-operations-with-constraint/description/">3106. 满足距离约束且字典序最小的字符串</a></p>
+<p><strong>分析：</strong><br>贪心，尽可能将字符串开始的字符变得更小，最小变为 <code>a</code> ，如果第一个字符变为了 <code>a</code> 则尽可能将第二个字符变更小，以此类推。</p>
+<p>注意距离函数的书写，小写字母表是 <strong>循环顺序排列</strong>，即 <code>z</code> 到 <code>a</code> 的距离是 1。 </p>
+<p><strong>代码：</strong></p>
+<p><strong>CPP：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">getSmallestString</span><span class="params">(string s, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(k==<span class="number">0</span>) <span class="keyword">return</span> s;</span><br><span class="line">        function&lt;<span class="type">int</span>(<span class="type">char</span> a, <span class="type">char</span> b)&gt; dist = [&amp;] (<span class="type">char</span> a, <span class="type">char</span> b) -&gt; <span class="type">int</span> &#123;</span><br><span class="line">            <span class="type">int</span> res = <span class="built_in">min</span>(<span class="built_in">abs</span>(a - b), <span class="built_in">min</span>(<span class="string">&#x27;z&#x27;</span> - a + <span class="number">1</span> + b - <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;z&#x27;</span> - b + <span class="number">1</span> + a - <span class="string">&#x27;a&#x27;</span>));</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="type">int</span> n = s.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]==<span class="string">&#x27;a&#x27;</span>) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="type">int</span> d = <span class="built_in">dist</span>(s[i], <span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">            <span class="keyword">if</span>(d &lt;= k) &#123;</span><br><span class="line">                s[i] = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">                k -= d;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                s[i] -= k;</span><br><span class="line">                k=<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(k==<span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>Python：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">getSmallestString</span>(<span class="params">self, s: <span class="built_in">str</span>, k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dist</span>(<span class="params">a: <span class="built_in">str</span>, b: <span class="built_in">str</span></span>):</span><br><span class="line">            res = <span class="built_in">min</span>(<span class="built_in">abs</span>(<span class="built_in">ord</span>(a) - <span class="built_in">ord</span>(b)), <span class="built_in">abs</span>(<span class="built_in">ord</span>(<span class="string">&#x27;z&#x27;</span>) - <span class="built_in">ord</span>(a) + <span class="number">1</span> + <span class="built_in">ord</span>(b) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)), <span class="built_in">abs</span>(<span class="built_in">ord</span>(<span class="string">&#x27;z&#x27;</span>) - <span class="built_in">ord</span>(b) + <span class="number">1</span> + <span class="built_in">ord</span>(a) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)))</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        ans, index, n = <span class="string">&quot;&quot;</span>, <span class="number">0</span>, <span class="built_in">len</span>(s)</span><br><span class="line">        <span class="keyword">for</span> i,x <span class="keyword">in</span> <span class="built_in">enumerate</span>(s):</span><br><span class="line">            d = dist(x, <span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">            <span class="keyword">if</span> d &lt;= k:</span><br><span class="line">                ans += <span class="string">&#x27;a&#x27;</span></span><br><span class="line">                k -= d</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ans += <span class="built_in">chr</span>(<span class="built_in">ord</span>(s[i]) - k)</span><br><span class="line">                k = <span class="number">0</span></span><br><span class="line">            index += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> k == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> index &lt;= n:</span><br><span class="line">            ans += s[index:]</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p><br></br></p>
+<h1 id="3107-使数组中位数等于-K-的最少操作数-中等"><a href="#3107-使数组中位数等于-K-的最少操作数-中等" class="headerlink" title="3107. 使数组中位数等于 K 的最少操作数 中等"></a>3107. 使数组中位数等于 K 的最少操作数 <font color='#ffbd00' size=2>中等</font></h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-operations-to-make-median-of-array-equal-to-k/description/">3107. 使数组中位数等于 K 的最少操作数</a></p>
+<p><strong>分析：</strong><br>先对数组进行升序排序。<br>根据贪心思想，可以知道，如果要将数组中位数设置为k，则从中位数开始增减。并对附近的数再进行增减，操作数是最小的。</p>
+<ul>
+<li>若 <code>nums[m] &lt; k</code> ，继续将后续中位数之后的，小于k的值增加到 <code>k</code>。</li>
+<li>若 <code>nums[m] &gt; k</code> ，继续将后续中位数之前的，大于k的值减小到 <code>k</code>。</li>
+<li>若 <code>nums[m] = k</code> ，不需要进行任何操作。</li>
+</ul>
+<p><strong>代码：</strong><br><strong>CPP：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">minOperationsToMakeMedianK</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        ranges::<span class="built_in">sort</span>(nums);</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>(), m = n/<span class="number">2</span>;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="type">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums[m] == k) <span class="keyword">return</span> ans;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(nums[m] &gt; k) flag=<span class="literal">false</span>; </span><br><span class="line">        <span class="keyword">while</span>( m&gt;=<span class="number">0</span>&amp;&amp;!flag&amp;&amp;nums[m]&gt;k || m&lt;n&amp;&amp;flag&amp;&amp;nums[m]&lt;k )&#123;</span><br><span class="line">            ans += <span class="number">1LL</span>*<span class="built_in">abs</span>(nums[m] - k);</span><br><span class="line">            m += flag?<span class="number">1</span>:<span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Python：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minOperationsToMakeMedianK</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        nums = <span class="built_in">sorted</span>(nums)</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        m = n//<span class="number">2</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> nums[m] == k:</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        flag = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">if</span> nums[m] &gt; k:</span><br><span class="line">            flag = <span class="keyword">not</span> flag</span><br><span class="line">        <span class="keyword">while</span> m&gt;=<span class="number">0</span> <span class="keyword">and</span> <span class="keyword">not</span> flag <span class="keyword">and</span> nums[m]&gt;k <span class="keyword">or</span> m&lt;n <span class="keyword">and</span> flag <span class="keyword">and</span> nums[m]&lt;k :</span><br><span class="line">            ans += <span class="built_in">abs</span>(nums[m] - k)</span><br><span class="line">            m += <span class="number">1</span> <span class="keyword">if</span> flag <span class="keyword">else</span> -<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p><br></br></p>
+<h1 id="3108-带权图里旅途的最小代价-困难"><a href="#3108-带权图里旅途的最小代价-困难" class="headerlink" title="3108. 带权图里旅途的最小代价 困难"></a>3108. 带权图里旅途的最小代价 <font color='#ff0044' size=2>困难</font></h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-cost-walk-in-weighted-graph/description/">3108. 带权图里旅途的最小代价</a></p>
+<p><strong>分析：</strong></p>
+<blockquote>
+<p><code>AND</code> 的性质：越多数字相与，最终结果越小</p>
+</blockquote>
+<p>根据 <code>AND</code> 的性质，我们尽可能的多走能走到的路。但是 <code>x&amp;x = x</code> ，因此不重复走同一路径。可以利用并查集将能到达的点归于同一连通块，再统计每一个连通快对应的路径相与的结果。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; dsu;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">find_dsu</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x == dsu[x]) <span class="keyword">return</span> x;</span><br><span class="line">        <span class="keyword">return</span> dsu[x] = <span class="built_in">find_dsu</span>(dsu[x]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">union_dsu</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">        x = <span class="built_in">find_dsu</span>(x);</span><br><span class="line">        y = <span class="built_in">find_dsu</span>(y);</span><br><span class="line">        <span class="keyword">if</span>(x!=y) dsu[x]=y;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">minimumCost</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; edges, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; query)</span> </span>&#123;</span><br><span class="line">        dsu = <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n);</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++) dsu[i] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> e : edges) <span class="built_in">union_dsu</span>(e[<span class="number">0</span>], e[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> e : edges)&#123;</span><br><span class="line">            <span class="type">int</span> x = <span class="built_in">find_dsu</span>(e[<span class="number">0</span>]);</span><br><span class="line">            m.<span class="built_in">emplace</span>(x,<span class="number">-1</span>); <span class="comment">// m[x] 没有值则初始化为-1，否则 m[x] 值不变</span></span><br><span class="line">            m[x] &amp;= e[<span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> q : query)&#123;</span><br><span class="line">            <span class="keyword">if</span>(q[<span class="number">0</span>] == q[<span class="number">1</span>])&#123;</span><br><span class="line">                ans.<span class="built_in">push_back</span>(<span class="number">0</span>);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">int</span> a=<span class="built_in">find_dsu</span>(q[<span class="number">0</span>]), b=<span class="built_in">find_dsu</span>(q[<span class="number">1</span>]);</span><br><span class="line">            <span class="type">int</span> cnt = <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">if</span>(a==b) &#123;</span><br><span class="line">                cnt = m[a];</span><br><span class="line">            &#125;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(cnt);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minimumCost</span>(<span class="params">self, n: <span class="built_in">int</span>, edges: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]], query: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        dsu = [ i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">        m = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">find_dsu</span>(<span class="params">x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">            <span class="keyword">nonlocal</span> dsu</span><br><span class="line">            <span class="keyword">if</span> dsu[x] != x:</span><br><span class="line">                dsu[x] = find_dsu(dsu[x])</span><br><span class="line">            <span class="keyword">return</span> dsu[x]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">union_dsu</span>(<span class="params">x: <span class="built_in">int</span>, y: <span class="built_in">int</span></span>):</span><br><span class="line">            <span class="keyword">nonlocal</span> dsu</span><br><span class="line">            x, y = find_dsu(x), find_dsu(y)</span><br><span class="line">            <span class="keyword">if</span> x != y:</span><br><span class="line">                dsu[x] = y </span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> [x,y,_] <span class="keyword">in</span> edges:</span><br><span class="line">            union_dsu(x,y)</span><br><span class="line">        <span class="keyword">for</span> [x,_,v] <span class="keyword">in</span> edges:</span><br><span class="line">            k = find_dsu(x)</span><br><span class="line">            <span class="keyword">if</span> k <span class="keyword">not</span> <span class="keyword">in</span> m:</span><br><span class="line">                m[k] = -<span class="number">1</span></span><br><span class="line">            m[k] &amp;= v</span><br><span class="line">        ans = []</span><br><span class="line">        <span class="keyword">for</span> [x,y] <span class="keyword">in</span> query:</span><br><span class="line">            <span class="keyword">if</span> x == y:</span><br><span class="line">                ans.append(<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            a, b = find_dsu(x), find_dsu(y)</span><br><span class="line">            <span class="keyword">if</span> a!=b:</span><br><span class="line">                ans.append(-<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ans.append(m[a])</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-04-08</span>
+            
+                <span>该篇文章被 ShuFuJia</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/LeetCode/'>
+                            LeetCode
+                        </a>
+                    
+                </span>
+             
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    <!-- <div class="post-footer-pre-next">
+        <span>上一篇：<a href=""></a></span>
+        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
+    </div> -->
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 2024-2024 China 
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊知之愈明，则行之愈笃；行之愈笃，则知之愈益明🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js
+"></script>
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+
+
+    <!--暗黑模式-->
+    <script src="/js/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+        const options = {
+            bottom: '53px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '42px', // default: 'unset'
+            time: '0.3s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+        }
+    
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+  
+</html>
